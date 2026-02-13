@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Varisha Mohsin</title>
+  <title>Skills | Varisha Mohsin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -134,50 +134,63 @@
       line-height: 1.8;
     }
 
-    /* PROJECTS SECTION */
-    .projects-section {
+    /* SKILLS SECTION */
+    .skills-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 5% 6rem;
+      padding: 2rem 5% 4rem;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    .skill-category {
+      margin-bottom: 4rem;
       animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       animation-fill-mode: backwards;
-      display: flex;
-      flex-direction: column;
     }
 
-    .project-card:nth-child(1) { animation-delay: 0.1s; }
-    .project-card:nth-child(2) { animation-delay: 0.2s; }
-    .project-card:nth-child(3) { animation-delay: 0.3s; }
-    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .skill-category:nth-child(1) { animation-delay: 0.1s; }
+    .skill-category:nth-child(2) { animation-delay: 0.2s; }
+    .skill-category:nth-child(3) { animation-delay: 0.3s; }
+    .skill-category:nth-child(4) { animation-delay: 0.4s; }
 
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent-light);
+    .skill-category h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
     }
 
-    .project-header {
-      background: linear-gradient(135deg, rgba(149, 146, 146, 0.1) 0%, rgba(173, 169, 167, 0.1) 100%);
-      padding: 2.5rem 2rem;
+    .skill-category h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
     }
 
-    .project-header::before {
+    .skill-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -185,93 +198,120 @@
       width: 100%;
       height: 3px;
       background: var(--accent);
-    }
-
-    .project-emoji {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .project-content {
-      padding: 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card h3 {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .project-card p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      flex: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-tag {
-      background: rgba(149, 146, 146, 0.15);
-      color: var(--dark);
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.75rem;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      align-self: flex-start;
-    }
-
-    .project-link:hover {
-      background: var(--dark);
-      transform: translateX(5px);
-      box-shadow: 0 6px 20px rgba(149, 146, 146, 0.3);
-    }
-
-    .project-link::after {
-      content: '→';
-      font-size: 1.1rem;
+      transform: scaleX(0);
+      transform-origin: left;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .project-link:hover::after {
-      transform: translateX(3px);
+    .skill-card:hover::before {
+      transform: scaleX(1);
     }
 
-    .coming-soon-badge {
-      display: inline-block;
-      background: rgba(149, 146, 146, 0.2);
-      color: var(--dark);
-      padding: 0.85rem 1.75rem;
-      border-radius: 8px;
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent-light);
+    }
+
+    .skill-card h3 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.4rem;
       font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .skill-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(149, 146, 146, 0.1);
+      border-radius: 6px;
+      font-size: 1.2rem;
+    }
+
+    .skill-card p {
       font-size: 0.95rem;
-      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .skill-level {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .skill-level-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-level-bar {
+      flex: 1;
+      height: 6px;
+      background: rgba(149, 146, 146, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-level-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 10px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* TOOLS SECTION */
+    .tools-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 5% 6rem;
+    }
+
+    .tools-section h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      color: var(--dark);
+    }
+
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+
+    .tool-badge {
+      background: white;
+      border: 2px solid var(--border);
+      padding: 0.85rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--dark);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: default;
+    }
+
+    .tool-badge:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(149, 146, 146, 0.25);
     }
 
     /* FOOTER */
@@ -308,12 +348,11 @@
         padding: 3rem 5% 2rem;
       }
 
-      .projects-grid {
+      .skills-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
       }
 
-      .project-content {
+      .skill-card {
         padding: 1.75rem;
       }
     }
@@ -346,11 +385,11 @@
         <img src="https://cdn-icons-png.flaticon.com/512/3235/3235733.png" alt="">
         <span>Education</span>
       </a>
-      <a href="skills.html">
+      <a href="skills.html" class="active">
         <img src="https://png.pngtree.com/png-vector/20230412/ourmid/pngtree-key-skills-line-icon-vector-png-image_6703008.png" alt="">
         <span>Skills</span>
       </a>
-      <a href="projects.html" class="active">
+      <a href="projects.html">
         <img src="https://cdn-icons-png.flaticon.com/512/2920/2920304.png" alt="">
         <span>Projects</span>
       </a>
@@ -362,74 +401,198 @@
   </header>
 
   <section class="page-header">
-    <h1>Projects</h1>
+    <h1>Technical Skills</h1>
     <p>
-      A collection of applications and projects I've built, showcasing my technical 
-      skills and passion for creating solutions through code.
+      A comprehensive overview of my programming languages, frameworks, and  
+      expertise developed through education and hands on projects.
     </p>
   </section>
 
-  <section class="projects-section">
-    <div class="projects-grid">
-      
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-emoji">🎯</span>
-        </div>
-        <div class="project-content">
-          <h3>Physics Projectile Game</h3>
+  <section class="skills-section">
+    
+    <div class="skill-category">
+      <h2>Programming Languages</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">🐍</span>
+            Python
+          </h3>
           <p>
-            An Angry Birds-inspired A Level NEA project that teaches projectile motion 
-            with realistic physics simulations and engaging level based challenges.
+            Proficient in Python for backend development, data processing, and scripting. 
+            Experienced with object-oriented programming and algorithm implementation.
           </p>
-          <div class="project-tags">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
+          <div class="skill-level">
+            <span class="skill-level-label">Advanced</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 85%"></div>
+            </div>
           </div>
-          <span class="coming-soon-badge"> GitHub</span>
         </div>
-      </div>
 
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-emoji">📚</span>
-        </div>
-        <div class="project-content">
-          <h3>Revision App</h3>
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">📜</span>
+            JavaScript
+          </h3>
           <p>
-            A student focused web application designed to help organize study notes, 
-            manage daily tasks, and track subject-wise revision progress. Features a 
-            clean interface with database-backed storage.
+            Strong knowledge of modern JavaScript for dynamic web applications and creating interactive user interfaces.
           </p>
-          <div class="project-tags">
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">SQLite</span>
-            <span class="project-tag">Express</span>
+          <div class="skill-level">
+            <span class="skill-level-label">Intermediate</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 75%"></div>
+            </div>
           </div>
-          <span class="coming-soon-badge">Coming Soon on GitHub</span>
         </div>
-      </div>
 
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-emoji">🍗</span>
-        </div>
-        <div class="project-content">
-          <h3>Cooking Website</h3>
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">📊</span>
+            SQL
+          </h3>
           <p>
-            A personal cooking website that serves as a digital recipe book storing 
-            my mother's cherished recipes!
+            Experienced in database design, queries, and data management.
           </p>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">JavaScript</span>
+          <div class="skill-level">
+            <span class="skill-level-label">Intermediate</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 70%"></div>
+            </div>
           </div>
-          <span class="coming-soon-badge">Coming Soon on GitHub</span>
         </div>
-      </div>
 
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h2>Web Development</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">🌐</span>
+            HTML & CSS
+          </h3>
+          <p>
+            Strong foundation in HTML and modern CSS for creating accessible web layouts.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Advanced</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">⚛️</span>
+            Frontend Frameworks
+          </h3>
+          <p>
+            Experience with modern frontend development practices, component based 
+            architecture, and creating responsive professional user interfaces.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Learning</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">🎨</span>
+            UI/UX Design
+          </h3>
+          <p>
+            Understanding of user centered design principles and creating 
+            intuitive interfaces that prioritizes usability which is also aesthetically pleasing.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Intermediate</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h2>Core Competencies</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">🧩</span>
+            Problem Solving
+          </h3>
+          <p>
+            Strong analytical thinking and algorithmic problem-solving skills. Experienced 
+            in breaking down complex problems into manageable solutions.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Advanced</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">💾</span>
+            Database Management
+          </h3>
+          <p>
+            Knowledge of database design, normalization, and efficient data storage 
+            solutions. Experience with relational database systems.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Intermediate</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>
+            <span class="skill-icon">🔧</span>
+            Version Control
+          </h3>
+          <p>
+            Proficient with Git for version control, collaboration, and managing code 
+            repositories. Comfortable with branching and merge workflows.
+          </p>
+          <div class="skill-level">
+            <span class="skill-level-label">Intermediate</span>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tools-section">
+    <h2>Tools & Technologies</h2>
+    <div class="tools-grid">
+      <div class="tool-badge">Git</div>
+      <div class="tool-badge">GitHub</div>
+      <div class="tool-badge">VS Code</div>
+      <div class="tool-badge">Chrome DevTools</div>
+      <div class="tool-badge">SQLite</div>
+      <div class="tool-badge">PyCharm</div>
+      <div class="tool-badge">Responsive Design</div>
     </div>
   </section>
 
