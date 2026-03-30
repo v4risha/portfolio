@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience | Varisha Mohsin</title>
+  <meta
+    name="description"
+    content="Experience and professional exposure of Varisha Mohsin across computing and finance, highlighting early workplace learning, communication, and adaptability."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,389 +20,643 @@
     }
 
     :root {
-      --cream: #faf8f5;
-      --dark: #1a1a1a;
-      --accent: #959292ca;
-      --accent-light: #ada9a7;
-      --text-secondary: #2a2a2a;
-      --border: #b5b4b3;
+      --bg: #f7f4ef;
+      --bg-soft: #efe8df;
+      --surface: rgba(255,255,255,0.78);
+      --surface-strong: #ffffff;
+      --text: #171717;
+      --text-soft: #57534e;
+      --muted: #7c756e;
+      --line: rgba(120, 113, 108, 0.18);
+      --accent: #7c5c46;
+      --accent-2: #a27d62;
+      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
+      --shadow-hover: 0 20px 52px rgba(25, 25, 25, 0.14);
+      --max-width: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--dark);
-      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
+        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
-    /* HEADER */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image:
+        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
+        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
+      background-size: 24px 24px, 28px 28px;
+      z-index: 0;
+    }
+
+    ::selection {
+      background: rgba(124, 92, 70, 0.18);
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
     header {
-      background: rgba(250, 248, 245, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1.5rem 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      background: rgba(247, 244, 239, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-shell {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
     }
 
     nav {
-      max-width: 1400px;
-      margin: 0 auto;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
-      gap: 2.5rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: var(--text-soft);
       text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
       font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+      transition: 0.25s ease;
       position: relative;
     }
 
     nav a::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -4px;
       left: 0;
+      bottom: -0.4rem;
       width: 0;
       height: 2px;
       background: var(--accent);
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 0.25s ease;
     }
 
-    nav a:hover {
-      color: var(--accent);
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
+    nav a:hover::after,
     nav a.active::after {
       width: 100%;
     }
 
-    nav img {
-      width: 16px;
-      height: 16px;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
-
-    nav a:hover img {
-      opacity: 1;
-    }
-
-    /* PAGE HEADER */
-    .page-header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 5rem 5% 3rem;
-      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .page-header h1 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 8vw, 4.5rem);
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
       font-weight: 700;
-      line-height: 1.1;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .page-hero {
+      padding: 5.8rem 0 2.2rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(124, 92, 70, 0.14);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .page-hero h1 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
       margin-bottom: 1rem;
-      color: var(--dark);
+      max-width: 11ch;
     }
 
-    .page-header p {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-      line-height: 1.8;
+    .page-hero p {
+      max-width: 72ch;
+      color: var(--text-soft);
+      font-size: 1.06rem;
     }
 
-    /* EXPERIENCE SECTION */
+    .summary-section {
+      padding-bottom: 2rem;
+    }
+
+    .summary-card {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(120, 113, 108, 0.08);
+    }
+
+    .summary-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .summary-item span {
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
     .experience-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 5% 6rem;
+      padding: 1rem 0 5rem;
     }
 
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
     }
 
     .experience-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
       overflow: hidden;
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      animation-fill-mode: backwards;
-    }
-
-    .experience-card:nth-child(1) { animation-delay: 0.1s; }
-    .experience-card:nth-child(2) { animation-delay: 0.2s; }
-
-    .experience-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .experience-card:hover::before {
-      transform: scaleY(1);
+      transition: 0.32s ease;
     }
 
     .experience-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-      border-color: var(--accent-light);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(124, 92, 70, 0.28);
     }
 
-    .experience-header {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
+    .experience-top {
+      padding: 1.5rem 1.5rem 1rem;
+      background:
+        linear-gradient(180deg, rgba(124, 92, 70, 0.06), transparent),
+        rgba(255,255,255,0.38);
+      border-bottom: 1px solid rgba(120, 113, 108, 0.08);
     }
 
-    .experience-card h3 {
+    .experience-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .experience-top h2 {
       font-family: 'Crimson Pro', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--dark);
-    }
-
-    .experience-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      font-size: 1.9rem;
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.02em;
     }
 
     .experience-role {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .experience-company {
       font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-    }
-
-    .experience-duration {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-style: italic;
-      display: inline-block;
-      background: rgba(149, 146, 146, 0.1);
-      padding: 0.3rem 0.75rem;
-      border-radius: 15px;
-      margin-top: 0.5rem;
-    }
-
-    .experience-content h4 {
-      font-size: 0.95rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .experience-date {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 70, 0.08);
+      color: var(--text-soft);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .experience-body {
+      padding: 1.35rem 1.5rem 1.5rem;
+    }
+
+    .experience-body h3 {
+      font-size: 0.9rem;
       text-transform: uppercase;
-      color: var(--dark);
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+      font-weight: 800;
+    }
+
+    .experience-body p {
+      color: var(--text-soft);
+      font-size: 0.97rem;
       margin-bottom: 1rem;
     }
 
-    .experience-content ul {
+    .experience-list {
       list-style: none;
-      padding: 0;
+      display: grid;
+      gap: 0.7rem;
     }
 
-    .experience-content li {
-      font-size: 0.98rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 0.75rem;
-      padding-left: 1.75rem;
+    .experience-list li {
       position: relative;
+      padding-left: 1.1rem;
+      color: var(--text-soft);
+      font-size: 0.96rem;
     }
 
-    .experience-content li::before {
-      content: '▹';
+    .experience-list li::before {
+      content: "";
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.2rem;
+      top: 0.63rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
-    /* FOOTER */
+    .cta-section {
+      padding: 0 0 5rem;
+    }
+
+    .cta-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-card h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-card p {
+      color: var(--text-soft);
+      max-width: 58ch;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124, 92, 70, 0.34);
+    }
+
     footer {
-      text-align: center;
-      padding: 2.5rem 5%;
-      background: white;
-      border-top: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.9rem;
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    /* MOBILE RESPONSIVENESS */
-    @media (max-width: 768px) {
-      header {
-        padding: 1rem 5%;
-      }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
 
-      nav {
-        gap: 1.2rem;
-        justify-content: center;
-      }
+    .social-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
 
-      nav a {
-        font-size: 0.85rem;
-      }
+    .social-link:hover {
+      color: var(--accent);
+    }
 
-      nav img {
-        width: 14px;
-        height: 14px;
-      }
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
 
-      .page-header {
-        padding: 3rem 5% 2rem;
-      }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    @media (max-width: 980px) {
+      .summary-card,
       .experience-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .experience-card {
-        padding: 2rem;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 760px) {
+      .nav-shell {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       nav {
-        gap: 0.8rem;
-        flex-wrap: wrap;
+        gap: 1rem;
       }
 
-      nav a span {
-        display: none;
+      .cta-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        width: 100%;
       }
 
-      nav img {
-        width: 18px;
-        height: 18px;
+      .nav-cta,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .page-hero h1 {
+        max-width: none;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="">
-        <span>Home</span>
+    <div class="nav-shell">
+      <a href="index.html" class="brand">
+        <strong>Varisha Mohsin</strong>
+        <span>Aspiring Software Developer</span>
       </a>
-      <a href="education.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/3235/3235733.png" alt="">
-        <span>Education</span>
-      </a>
-      <a href="skills.html">
-        <img src="https://png.pngtree.com/png-vector/20230412/ourmid/pngtree-key-skills-line-icon-vector-png-image_6703008.png" alt="">
-        <span>Skills</span>
-      </a>
-      <a href="projects.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920304.png" alt="">
-        <span>Projects</span>
-      </a>
-      <a href="experience.html" class="active">
-        <img src="https://cdn-icons-png.flaticon.com/512/3504/3504016.png" alt="">
-        <span>Experience</span>
-      </a>
-    </nav>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html" class="active">Experience</a>
+        <a href="education.html">Education</a>
+      </nav>
+
+      <a class="nav-cta" href="index.html#contact">Contact Me</a>
+    </div>
   </header>
 
-  <section class="page-header">
-    <h1>Experience</h1>
-    <p>
-      Professional work experience across computing and finance sectors, demonstrating 
-      versatility and a commitment to learning across different industries.
-    </p>
-  </section>
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="eyebrow">Professional Exposure</div>
+        <h1>Experience that shaped how I work and learn.</h1>
+        <p>
+          My experience so far includes early exposure to both computing and business environments.
+          These placements helped me build confidence, observe professional workflows, and develop
+          transferable skills such as communication, adaptability, and learning quickly in new settings.
+        </p>
+      </div>
+    </section>
 
-  <section class="experience-section">
-    <div class="experience-grid">
-      
-      <article class="experience-card">
-        <div class="experience-header">
-          <h3>DV Telecom Service</h3>
-          <div class="experience-meta">
-            <span class="experience-role">Computing Work Experience</span>
-            <span class="experience-duration">June 2022</span>
+    <section class="summary-section">
+      <div class="container reveal">
+        <div class="summary-card">
+          <div class="summary-item">
+            <strong>Early workplace exposure</strong>
+            <span>Experience observing how teams operate in professional environments.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Adaptability</strong>
+            <span>Comfortable learning in new settings across both technical and non-technical work.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Transferable strengths</strong>
+            <span>Communication, observation, curiosity, and willingness to learn.</span>
           </div>
         </div>
-        <div class="experience-content">
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>Explored network infrastructure and management systems</li>
-            <li>Assisted in troubleshooting and optimizing network performance</li>
-            <li>Documented and reported findings to senior engineers</li>
-          </ul>
-        </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="experience-card">
-        <div class="experience-header">
-          <h3>AON</h3>
-          <div class="experience-meta">
-            <span class="experience-role">Finance Work Experience</span>
-            <span class="experience-duration">July 2024</span>
+    <section class="experience-section">
+      <div class="container">
+        <div class="experience-grid">
+
+          <article class="experience-card reveal">
+            <div class="experience-top">
+              <div class="experience-label">Computing Placement</div>
+              <h2>DV Telecom Service</h2>
+              <div class="experience-role">Work Experience</div>
+              <div class="experience-date">June 2022</div>
+            </div>
+
+            <div class="experience-body">
+              <h3>Overview</h3>
+              <p>
+                This placement gave me insight into a computing-focused work environment and introduced me
+                to the practical side of technical systems, troubleshooting, and professional communication.
+              </p>
+
+              <h3>What I gained</h3>
+              <ul class="experience-list">
+                <li>Observed how technical teams worked with network-related systems and day-to-day operations.</li>
+                <li>Developed a better understanding of troubleshooting processes and problem-solving in practice.</li>
+                <li>Learned from professionals by asking questions, listening carefully, and taking on feedback.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-top">
+              <div class="experience-label">Business Placement</div>
+              <h2>AON</h2>
+              <div class="experience-role">Work Experience</div>
+              <div class="experience-date">July 2024</div>
+            </div>
+
+            <div class="experience-body">
+              <h3>Overview</h3>
+              <p>
+                This experience gave me exposure to a professional corporate environment and helped me understand
+                how large organisations communicate, organise work, and approach problem-solving in business settings.
+              </p>
+
+              <h3>What I gained</h3>
+              <ul class="experience-list">
+                <li>Built awareness of professional communication, teamwork, and workplace expectations.</li>
+                <li>Learned more about how analytical thinking is used in business and finance-related contexts.</li>
+                <li>Strengthened my confidence in adapting to new environments and learning quickly from experience.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container reveal">
+        <div class="cta-card">
+          <div>
+            <h2>See the technical side too.</h2>
+            <p>
+              Alongside these experiences, my portfolio projects show how I’m developing my coding skills
+              through hands-on practice and real builds.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="projects.html" class="btn-primary">View Projects</a>
+            <a href="skills.html" class="btn-secondary">View Skills</a>
           </div>
         </div>
-        <div class="experience-content">
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>Supported financial analysts with data collection and analysis</li>
-            <li>Learned about risk management and insurance processes</li>
-            <li>Prepared reports and presentations for internal teams</li>
-          </ul>
-        </div>
-      </article>
-
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Varisha Mohsin. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-row">
+        <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
+        <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
