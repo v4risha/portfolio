@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Education | Varisha Mohsin</title>
+  <meta name="description" content="Education and academic background of Varisha Mohsin, including A-Levels, GCSEs, and technical training in programming and web development." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,30 +18,55 @@
 
     :root {
       --cream: #faf8f5;
-      --dark: #1a1a1a;
-      --accent: #959292ca;
-      --accent-light: #ada9a7;
-      --text-secondary: #2a2a2a;
-      --border: #b5b4b3;
+      --cream-deep: #f3ece7;
+      --white: #ffffff;
+      --dark: #191919;
+      --accent: #8e847f;
+      --accent-light: #b6aca7;
+      --accent-soft: #ded5cf;
+      --text-secondary: #4d4b49;
+      --border: rgba(182, 172, 167, 0.42);
+      --shadow: 0 12px 35px rgba(25, 25, 25, 0.07);
+      --shadow-hover: 0 18px 45px rgba(25, 25, 25, 0.11);
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
+      background:
+        radial-gradient(circle at top left, rgba(222, 213, 207, 0.35), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(182, 172, 167, 0.16), transparent 24%),
+        linear-gradient(180deg, #fcfbfa 0%, #f7f2ee 55%, #f4eee9 100%);
       color: var(--dark);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image:
+        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.6px),
+        radial-gradient(circle at 70% 60%, #000 0.5px, transparent 0.6px);
+      background-size: 24px 24px, 30px 30px;
+      z-index: 0;
+    }
+
     /* HEADER */
     header {
-      background: rgba(250, 248, 245, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1.5rem 5%;
+      background: rgba(250, 248, 245, 0.72);
+      backdrop-filter: blur(14px);
+      padding: 1.15rem 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(182, 172, 167, 0.24);
     }
 
     nav {
@@ -49,7 +75,8 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      gap: 2.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -60,30 +87,28 @@
       color: var(--dark);
       font-weight: 500;
       font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.2px;
+      transition: all 0.3s ease;
       position: relative;
     }
 
     nav a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: -6px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent);
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transition: width 0.3s ease;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: var(--accent);
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
+    nav a:hover::after,
     nav a.active::after {
       width: 100%;
     }
@@ -91,11 +116,12 @@
     nav img {
       width: 16px;
       height: 16px;
-      opacity: 0.7;
-      transition: opacity 0.3s;
+      opacity: 0.75;
+      transition: opacity 0.3s ease;
     }
 
-    nav a:hover img {
+    nav a:hover img,
+    nav a.active img {
       opacity: 1;
     }
 
@@ -103,42 +129,96 @@
     .page-header {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 5rem 5% 3rem;
-      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 5.5rem 5% 2.5rem;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 0.8s ease;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid rgba(182, 172, 167, 0.55);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(8px);
     }
 
     .page-header h1 {
       font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 8vw, 4.5rem);
+      font-size: clamp(3rem, 8vw, 5rem);
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1.02;
       margin-bottom: 1rem;
       color: var(--dark);
+      letter-spacing: -0.02em;
     }
 
     .page-header p {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: var(--text-secondary);
-      max-width: 700px;
-      line-height: 1.8;
+      max-width: 760px;
+      line-height: 1.9;
+    }
+
+    /* SUMMARY STRIP */
+    .summary-strip {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5% 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-card {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(182, 172, 167, 0.35);
+      border-radius: 22px;
+      padding: 1.25rem;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-item {
+      padding: 1rem;
+      border-radius: 16px;
+      background: rgba(250,248,245,0.65);
+      border: 1px solid rgba(182, 172, 167, 0.18);
+    }
+
+    .summary-item strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-item span {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
     }
 
     /* EDUCATION SECTION */
     .education-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 5% 6rem;
+      padding: 1rem 5% 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 5vw, 2.7rem);
+      margin-bottom: 2rem;
     }
 
     .education-timeline {
@@ -149,46 +229,47 @@
     .education-timeline::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: 10px;
       top: 0;
       bottom: 0;
       width: 2px;
-      background: var(--border);
+      background: linear-gradient(180deg, var(--accent-light), rgba(182, 172, 167, 0.2));
     }
 
     .education-item {
       position: relative;
-      margin-bottom: 4rem;
-      animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.7s ease;
       animation-fill-mode: backwards;
     }
 
-    .education-item:nth-child(1) { animation-delay: 0.1s; }
-    .education-item:nth-child(2) { animation-delay: 0.2s; }
-    .education-item:nth-child(3) { animation-delay: 0.3s; }
-    .education-item:nth-child(4) { animation-delay: 0.4s; }
+    .education-item:nth-child(1) { animation-delay: 0.08s; }
+    .education-item:nth-child(2) { animation-delay: 0.16s; }
 
     .education-item::before {
       content: '';
       position: absolute;
-      left: -3.5rem;
-      top: 0.5rem;
-      width: 14px;
-      height: 14px;
+      left: -2.45rem;
+      top: 1.55rem;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
       border: 3px solid var(--cream);
-      z-index: 1;
+      z-index: 2;
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.35);
     }
 
     .education-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255,255,255,0.78);
+      padding: 2rem;
+      border-radius: 24px;
+      border: 1px solid rgba(182, 172, 167, 0.38);
+      transition: all 0.35s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
     }
 
     .education-card::before {
@@ -196,195 +277,258 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent);
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .education-card:hover::before {
-      transform: scaleY(1);
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), transparent);
     }
 
     .education-card:hover {
-      transform: translateX(8px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      border-color: var(--accent-light);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(142, 132, 127, 0.45);
+    }
+
+    .education-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
     }
 
     .education-period {
       display: inline-block;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.75rem;
+      padding: 0.45rem 0.8rem;
+      background: rgba(142, 132, 127, 0.08);
+      border-radius: 999px;
+      border: 1px solid rgba(182, 172, 167, 0.18);
     }
 
     .education-card h3 {
       font-family: 'Crimson Pro', serif;
-      font-size: 1.75rem;
+      font-size: 1.9rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.35rem;
       color: var(--dark);
+      line-height: 1.15;
     }
 
-    .education-card .institution {
-      font-size: 1.1rem;
+    .institution {
+      font-size: 1.02rem;
       font-weight: 500;
       color: var(--text-secondary);
       margin-bottom: 1rem;
     }
 
-    .education-card .description {
+    .description {
       font-size: 1rem;
       color: var(--text-secondary);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
+      line-height: 1.85;
+      margin-bottom: 1.4rem;
+      max-width: 900px;
     }
 
-    .subjects-list,
-    .achievements-list {
-      margin-top: 1.5rem;
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
-    .subjects-list h4,
-    .achievements-list h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+    .info-panel {
+      background: rgba(250,248,245,0.82);
+      border: 1px solid rgba(182, 172, 167, 0.24);
+      border-radius: 18px;
+      padding: 1rem 1rem 0.9rem;
+    }
+
+    .info-panel h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
       color: var(--dark);
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
-    .subjects-list ul,
-    .achievements-list ul {
+    .info-panel ul {
       list-style: none;
-      padding: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
-    .subjects-list li,
-    .achievements-list li {
+    .info-panel li {
+      position: relative;
+      padding-left: 1.35rem;
       font-size: 0.95rem;
       color: var(--text-secondary);
-      padding-left: 1.5rem;
-      position: relative;
       line-height: 1.6;
     }
 
-    .subjects-list li::before {
+    .subjects-panel li::before {
       content: '▹';
       position: absolute;
       left: 0;
       color: var(--accent);
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
-    .achievements-list li::before {
+    .achievements-panel li::before {
       content: '★';
       position: absolute;
       left: 0;
       color: var(--accent);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      top: 0.18rem;
     }
 
     .grade-badge {
-      display: inline-block;
-      background: rgba(149, 146, 146, 0.15);
+      display: inline-flex;
+      align-items: center;
+      background: rgba(142, 132, 127, 0.1);
       color: var(--dark);
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
+      padding: 0.48rem 0.95rem;
+      border-radius: 999px;
       font-size: 0.9rem;
-      font-weight: 600;
-      margin-top: 1rem;
+      font-weight: 700;
+      margin-top: 1.2rem;
+      border: 1px solid rgba(182, 172, 167, 0.18);
     }
 
-    /* CERTIFICATIONS SECTION */
+    /* CERTIFICATIONS */
     .certifications-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 5% 6rem;
+      padding: 1rem 5% 6rem;
+      position: relative;
+      z-index: 2;
     }
 
-    .certifications-section h2 {
+    .certifications-header {
+      margin-bottom: 2rem;
+    }
+
+    .certifications-header h2 {
       font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 5vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 3rem;
+      font-size: clamp(2rem, 5vw, 2.7rem);
+      margin-bottom: 0.7rem;
       color: var(--dark);
+    }
+
+    .certifications-header p {
+      color: var(--text-secondary);
+      max-width: 700px;
     }
 
     .certifications-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .certification-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255,255,255,0.78);
+      padding: 1.6rem;
+      border-radius: 22px;
+      border: 1px solid rgba(182, 172, 167, 0.34);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
     .certification-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-      border-color: var(--accent-light);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(142, 132, 127, 0.4);
+    }
+
+    .certification-label {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(142, 132, 127, 0.1);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
     }
 
     .certification-card h3 {
       font-family: 'Crimson Pro', serif;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
       color: var(--dark);
     }
 
-    .certification-card .provider {
-      font-size: 0.95rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 1rem;
+    .provider {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.7rem;
     }
 
-    .certification-card .date {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
+    .date {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 2.5rem 5%;
-      background: white;
-      border-top: 1px solid var(--border);
+      padding: 2.2rem 5%;
+      background: rgba(255,255,255,0.82);
+      border-top: 1px solid rgba(182, 172, 167, 0.22);
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      position: relative;
+      z-index: 2;
     }
 
-    /* MOBILE RESPONSIVENESS */
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .summary-card {
+        grid-template-columns: 1fr;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       header {
         padding: 1rem 5%;
       }
 
       nav {
-        gap: 1.2rem;
+        gap: 1rem;
         justify-content: center;
       }
 
       nav a {
-        font-size: 0.85rem;
+        font-size: 0.86rem;
       }
 
       nav img {
@@ -393,28 +537,23 @@
       }
 
       .page-header {
-        padding: 3rem 5% 2rem;
+        padding: 4rem 5% 2rem;
       }
 
       .education-timeline {
         padding-left: 2rem;
       }
 
+      .education-timeline::before {
+        left: 7px;
+      }
+
       .education-item::before {
-        left: -2.5rem;
+        left: -1.95rem;
       }
 
       .education-card {
-        padding: 1.75rem;
-      }
-
-      .subjects-list ul,
-      .achievements-list ul {
-        grid-template-columns: 1fr;
-      }
-
-      .certifications-grid {
-        grid-template-columns: 1fr;
+        padding: 1.5rem;
       }
     }
 
@@ -431,6 +570,16 @@
       nav img {
         width: 18px;
         height: 18px;
+      }
+
+      .summary-card,
+      .education-card,
+      .certification-card {
+        padding: 1.2rem;
+      }
+
+      .education-card h3 {
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -462,101 +611,154 @@
   </header>
 
   <section class="page-header">
+    <span class="eyebrow">Academic Background</span>
     <h1>Education</h1>
     <p>
-      My academic journey in Computer Science and technology, building a strong 
-      foundation for a career in software development. Currently on a gap year but here is my past education!
+      My academic journey has given me a strong foundation in Computer Science, mathematics, and analytical thinking.
+      During my gap year, I have continued building on that foundation through independent technical learning and practical projects.
     </p>
   </section>
 
+  <section class="summary-strip">
+    <div class="summary-card">
+      <div class="summary-item">
+        <strong>Computer Science Focus</strong>
+        <span>Built around programming, computational thinking, and software development.</span>
+      </div>
+      <div class="summary-item">
+        <strong>Analytical Foundation</strong>
+        <span>Strengthened by mathematics and physics alongside technical study.</span>
+      </div>
+      <div class="summary-item">
+        <strong>Continuous Learning</strong>
+        <span>Supported by independent study in web development, Python, and databases.</span>
+      </div>
+    </div>
+  </section>
+
   <section class="education-section">
+    <h2 class="section-title">Academic Timeline</h2>
+
     <div class="education-timeline">
-      
-      <div class="education-item">
+
+      <article class="education-item">
         <div class="education-card">
-          <span class="education-period">2023 - 2025</span>
-          <h3>A-Levels </h3>
-          <p class="institution">Sixth Form College</p>
-          <p class="description">
-            Pursued A level qualifications with a specialization in Computer Science. 
-            Developing advanced programming skills and theoretical understanding of computational 
-            thinking, algorithms, and software development methodologies.
-          </p>
-          
-          <div class="subjects-list">
-            <h4>Key Subjects</h4>
-            <ul>
-              <li>Computer Science</li>
-              <li>Mathematics</li>
-              <li>Physics</li>
-            </ul>
+          <div class="education-top">
+            <div>
+              <span class="education-period">2023 – 2025</span>
+              <h3>A-Levels</h3>
+              <p class="institution">Sixth Form College</p>
+            </div>
           </div>
 
-          <div class="achievements-list">
-            <h4>Notable Projects</h4>
-            <ul>
-              <li>NEA Project - projectile motion application for Physics tutors</li>
-            </ul>
+          <p class="description">
+            Studied A-Levels with a strong focus on Computer Science, supported by Mathematics and Physics.
+            This combination strengthened both my technical understanding and my problem-solving ability,
+            helping me develop a deeper appreciation for algorithms, logic, and structured thinking.
+          </p>
+
+          <div class="education-grid">
+            <div class="info-panel subjects-panel">
+              <h4>Key Subjects</h4>
+              <ul>
+                <li>Computer Science</li>
+                <li>Mathematics</li>
+                <li>Physics</li>
+              </ul>
+            </div>
+
+            <div class="info-panel achievements-panel">
+              <h4>Notable Academic Work</h4>
+              <ul>
+                <li>NEA project based on projectile motion and educational software design.</li>
+                <li>Applied programming concepts to build an interactive solution with a real learning purpose.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="education-item">
+      <article class="education-item">
         <div class="education-card">
-          <span class="education-period">2018 - 2023</span>
-          <h3>GCSE Qualifications</h3>
-          <p class="institution">Secondary School</p>
+          <div class="education-top">
+            <div>
+              <span class="education-period">2018 – 2023</span>
+              <h3>GCSE Qualifications</h3>
+              <p class="institution">Secondary School</p>
+            </div>
+          </div>
+
           <p class="description">
-            Completed GCSEs with strong performance across core subjects, developing 
-            foundational knowledge and academic skills that prepared me for advanced studies.
+            Completed GCSE studies across a broad range of subjects, building a solid academic base
+            and developing the discipline, communication skills, and subject knowledge that prepared me for advanced study.
           </p>
-          
-          <div class="subjects-list">
-            <h4>Key Subjects Achieved</h4>
-            <ul>
-              <li>Computer Science</li>
-              <li>Mathematics</li>
-              <li>English Language</li>
-              <li>Physics,  Biology,  Chemistry </li>
-              <li>Some more additonal GCSE's</li>
-            </ul>
+
+          <div class="education-grid">
+            <div class="info-panel subjects-panel">
+              <h4>Core Subjects</h4>
+              <ul>
+                <li>Computer Science</li>
+                <li>Mathematics</li>
+                <li>English Language</li>
+                <li>Physics</li>
+                <li>Biology</li>
+                <li>Chemistry</li>
+              </ul>
+            </div>
+
+            <div class="info-panel achievements-panel">
+              <h4>Academic Strengths</h4>
+              <ul>
+                <li>Strong performance across core analytical and scientific subjects.</li>
+                <li>Established the foundation for later study in computing and technology.</li>
+              </ul>
+            </div>
           </div>
 
           <span class="grade-badge">Strong Academic Performance</span>
         </div>
-      </div>
+      </article>
 
     </div>
   </section>
 
   <section class="certifications-section">
-    <h2>Certifications & Training</h2>
+    <div class="certifications-header">
+      <h2>Additional Learning & Technical Development</h2>
+      <p>
+        Alongside formal education, I have continued strengthening my technical skills through independent study
+        and hands-on project work in programming, web development, and databases.
+      </p>
+    </div>
+
     <div class="certifications-grid">
-      
+
       <div class="certification-card">
+        <span class="certification-label">Programming</span>
         <h3>Python Programming</h3>
-        <p class="provider">Online Course Platform</p>
-        <p class="date">Completed 2024</p>
+        <p class="provider">Independent learning and online technical study</p>
+        <p class="date">Completed in 2024</p>
       </div>
 
       <div class="certification-card">
+        <span class="certification-label">Web Development</span>
         <h3>Web Development Fundamentals</h3>
-        <p class="provider">Self-Directed Learning</p>
+        <p class="provider">Self-directed learning through practical projects</p>
         <p class="date">Ongoing</p>
       </div>
 
       <div class="certification-card">
+        <span class="certification-label">Databases</span>
         <h3>SQL & Database Management</h3>
-        <p class="provider">Online Course Platform</p>
-        <p class="date">Completed 2024</p>
+        <p class="provider">Independent technical learning and applied practice</p>
+        <p class="date">Completed in 2024</p>
       </div>
 
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Varisha Mohsin. All rights reserved.</p>
+    <p>&copy; 2025 Varisha Mohsin. Designed and developed with care.</p>
   </footer>
 </body>
 </html>
-
