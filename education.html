@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education | Varisha Mohsin</title>
-  <meta name="description" content="Education and academic background of Varisha Mohsin, including A-Levels, GCSEs, and technical training in programming and web development." />
+  <title>Varisha Mohsin | Aspiring Software Developer</title>
+  <meta
+    name="description"
+    content="Portfolio of Varisha Mohsin, an aspiring software developer with strong foundations in Python, JavaScript, HTML, CSS, and basic SQL."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -17,17 +20,20 @@
     }
 
     :root {
-      --cream: #faf8f5;
-      --cream-deep: #f3ece7;
-      --white: #ffffff;
-      --dark: #191919;
-      --accent: #8e847f;
-      --accent-light: #b6aca7;
-      --accent-soft: #ded5cf;
-      --text-secondary: #4d4b49;
-      --border: rgba(182, 172, 167, 0.42);
-      --shadow: 0 12px 35px rgba(25, 25, 25, 0.07);
-      --shadow-hover: 0 18px 45px rgba(25, 25, 25, 0.11);
+      --bg: #f7f4ef;
+      --bg-soft: #efe8df;
+      --surface: rgba(255,255,255,0.78);
+      --surface-strong: #ffffff;
+      --text: #171717;
+      --text-soft: #57534e;
+      --muted: #7c756e;
+      --line: rgba(120, 113, 108, 0.18);
+      --accent: #7c5c46;
+      --accent-2: #a27d62;
+      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
+      --shadow-hover: 0 20px 52px rgba(25, 25, 25, 0.14);
+      --radius: 28px;
+      --max-width: 1180px;
     }
 
     html {
@@ -35,13 +41,13 @@
     }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(222, 213, 207, 0.35), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(182, 172, 167, 0.16), transparent 24%),
-        linear-gradient(180deg, #fcfbfa 0%, #f7f2ee 55%, #f4eee9 100%);
-      color: var(--dark);
-      line-height: 1.7;
+        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
+        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
       overflow-x: hidden;
     }
 
@@ -50,130 +56,363 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.04;
+      opacity: 0.03;
       background-image:
-        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.6px),
-        radial-gradient(circle at 70% 60%, #000 0.5px, transparent 0.6px);
-      background-size: 24px 24px, 30px 30px;
+        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
+        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
+      background-size: 24px 24px, 28px 28px;
       z-index: 0;
     }
 
-    /* HEADER */
+    ::selection {
+      background: rgba(124, 92, 70, 0.18);
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
     header {
-      background: rgba(250, 248, 245, 0.72);
-      backdrop-filter: blur(14px);
-      padding: 1.15rem 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(182, 172, 167, 0.24);
+      backdrop-filter: blur(14px);
+      background: rgba(247, 244, 239, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-shell {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
     }
 
     nav {
-      max-width: 1400px;
-      margin: 0 auto;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
-      gap: 2rem;
+      gap: 1.3rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: var(--text-soft);
       text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.2px;
-      transition: all 0.3s ease;
+      font-size: 0.93rem;
+      font-weight: 600;
+      transition: 0.25s ease;
       position: relative;
     }
 
     nav a::after {
-      content: '';
+      content: "";
       position: absolute;
-      bottom: -6px;
       left: 0;
+      bottom: -0.4rem;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-light));
-      transition: width 0.3s ease;
+      background: var(--accent);
+      transition: width 0.25s ease;
     }
 
-    nav a:hover,
-    nav a.active {
-      color: var(--accent);
+    nav a:hover {
+      color: var(--text);
     }
 
-    nav a:hover::after,
-    nav a.active::after {
+    nav a:hover::after {
       width: 100%;
     }
 
-    nav img {
-      width: 16px;
-      height: 16px;
-      opacity: 0.75;
-      transition: opacity 0.3s ease;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+      flex-shrink: 0;
     }
 
-    nav a:hover img,
-    nav a.active img {
-      opacity: 1;
+    .nav-cta:hover {
+      transform: translateY(-2px);
     }
 
-    /* PAGE HEADER */
-    .page-header {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 5.5rem 5% 2.5rem;
-      position: relative;
-      z-index: 2;
-      animation: fadeInUp 0.8s ease;
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    .hero {
+      padding: 6rem 0 3.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
     }
 
     .eyebrow {
-      display: inline-block;
-      font-size: 0.82rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       padding: 0.45rem 0.85rem;
-      border: 1px solid rgba(182, 172, 167, 0.55);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(124, 92, 70, 0.14);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(10px);
     }
 
-    .page-header h1 {
+    .hero h1,
+    .section-title,
+    .page-title,
+    .contact-card h2 {
       font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-weight: 700;
-      line-height: 1.02;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      color: var(--text);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      margin-bottom: 1.1rem;
+      max-width: 11ch;
+    }
+
+    .hero h1 .soft {
+      color: var(--muted);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-soft);
+      max-width: 60ch;
       margin-bottom: 1rem;
-      color: var(--dark);
-      letter-spacing: -0.02em;
     }
 
-    .page-header p {
-      font-size: 1.12rem;
-      color: var(--text-secondary);
-      max-width: 760px;
-      line-height: 1.9;
+    .hero-description {
+      color: var(--text-soft);
+      max-width: 60ch;
+      margin-bottom: 1.8rem;
     }
 
-    /* SUMMARY STRIP */
-    .summary-strip {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 5% 2.5rem;
-      position: relative;
-      z-index: 2;
+    .hero-actions,
+    .cta-actions,
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-muted {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.72);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124, 92, 70, 0.34);
+    }
+
+    .btn-muted {
+      background: rgba(124, 92, 70, 0.08);
+      color: var(--text-soft);
+      border: 1px solid rgba(124, 92, 70, 0.08);
+      cursor: default;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      max-width: 720px;
+      margin-top: 1.8rem;
+    }
+
+    .metric,
+    .panel,
+    .summary-item,
+    .skill-card,
+    .project-card,
+    .experience-card,
+    .education-card,
+    .cert-card {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric span {
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .panel {
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .panel h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .panel p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 0.85rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .profile-item {
+      padding: 0.95rem 1rem;
+      background: rgba(255,255,255,0.66);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .profile-item strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.92rem;
+    }
+
+    .profile-item span {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .tag-row,
+    .skill-tags,
+    .tags,
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tag,
+    .skill-tag,
+    .tool-badge {
+      padding: 0.5rem 0.78rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 70, 0.08);
+      border: 1px solid rgba(124, 92, 70, 0.08);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 2rem 0 1rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.6vw, 3.15rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-copy {
+      color: var(--text-soft);
+      max-width: 70ch;
     }
 
     .summary-card {
@@ -181,49 +420,33 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
       background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(182, 172, 167, 0.35);
-      border-radius: 22px;
-      padding: 1.25rem;
-      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.2rem;
       box-shadow: var(--shadow);
+      margin-top: 1.3rem;
     }
 
     .summary-item {
       padding: 1rem;
-      border-radius: 16px;
-      background: rgba(250,248,245,0.65);
-      border: 1px solid rgba(182, 172, 167, 0.18);
+      border-radius: 18px;
     }
 
     .summary-item strong {
       display: block;
-      font-size: 1.05rem;
-      margin-bottom: 0.25rem;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
     }
 
     .summary-item span {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    /* EDUCATION SECTION */
-    .education-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 5% 5rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-title {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 5vw, 2.7rem);
-      margin-bottom: 2rem;
+      color: var(--text-soft);
+      font-size: 0.94rem;
     }
 
     .education-timeline {
       position: relative;
       padding-left: 3rem;
+      margin-top: 1.3rem;
     }
 
     .education-timeline::before {
@@ -233,59 +456,71 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(180deg, var(--accent-light), rgba(182, 172, 167, 0.2));
+      background: linear-gradient(180deg, var(--accent-2), rgba(162,125,98,0.15));
     }
 
     .education-item {
       position: relative;
-      margin-bottom: 2rem;
-      animation: fadeInUp 0.7s ease;
-      animation-fill-mode: backwards;
+      margin-bottom: 1.4rem;
     }
-
-    .education-item:nth-child(1) { animation-delay: 0.08s; }
-    .education-item:nth-child(2) { animation-delay: 0.16s; }
 
     .education-item::before {
       content: '';
       position: absolute;
       left: -2.45rem;
-      top: 1.55rem;
+      top: 1.5rem;
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-light));
-      border: 3px solid var(--cream);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 3px solid var(--bg);
       z-index: 2;
       box-shadow: 0 0 0 8px rgba(255,255,255,0.35);
     }
 
-    .education-card {
-      background: rgba(255,255,255,0.78);
-      padding: 2rem;
+    .education-card,
+    .project-card,
+    .experience-card,
+    .skill-card,
+    .cert-card {
       border-radius: 24px;
-      border: 1px solid rgba(182, 172, 167, 0.38);
-      transition: all 0.35s ease;
-      position: relative;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      transition: 0.32s ease;
+    }
+
+    .education-card:hover,
+    .project-card:hover,
+    .experience-card:hover,
+    .skill-card:hover,
+    .cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(124, 92, 70, 0.28);
+    }
+
+    .education-card,
+    .project-card,
+    .experience-card,
+    .skill-card,
+    .cert-card,
+    .tools-card,
+    .contact-card {
       backdrop-filter: blur(12px);
     }
 
-    .education-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-light), transparent);
+    .education-card {
+      padding: 1.7rem;
+      position: relative;
     }
 
-    .education-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(142, 132, 127, 0.45);
+    .education-card::before,
+    .project-top::before,
+    .experience-top::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), transparent);
     }
 
     .education-top {
@@ -294,250 +529,372 @@
       align-items: flex-start;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
-    .education-period {
-      display: inline-block;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding: 0.45rem 0.8rem;
-      background: rgba(142, 132, 127, 0.08);
+    .education-period,
+    .project-type,
+    .experience-label,
+    .certification-label,
+    .skill-level {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.75rem;
       border-radius: 999px;
-      border: 1px solid rgba(182, 172, 167, 0.18);
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .education-card h3,
+    .project-title,
+    .experience-top h2,
+    .cert-card h3 {
+      font-family: 'Crimson Pro', serif;
+      letter-spacing: -0.02em;
+      color: var(--text);
     }
 
     .education-card h3 {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.9rem;
-      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.1;
       margin-bottom: 0.35rem;
-      color: var(--dark);
-      line-height: 1.15;
+    }
+
+    .institution,
+    .description,
+    .provider,
+    .project-intro,
+    .experience-body p,
+    .skill-card p,
+    .tools-card p,
+    .contact-card p {
+      color: var(--text-soft);
     }
 
     .institution {
-      font-size: 1.02rem;
+      margin-bottom: 0.9rem;
       font-weight: 500;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
     }
 
     .description {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.85;
-      margin-bottom: 1.4rem;
-      max-width: 900px;
+      margin-bottom: 1.2rem;
+    }
+
+    .education-grid,
+    .skills-grid,
+    .projects-grid,
+    .experience-grid,
+    .certifications-grid {
+      display: grid;
+      gap: 1rem;
     }
 
     .education-grid {
-      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
       margin-top: 1rem;
     }
 
     .info-panel {
       background: rgba(250,248,245,0.82);
-      border: 1px solid rgba(182, 172, 167, 0.24);
+      border: 1px solid rgba(120, 113, 108, 0.12);
       border-radius: 18px;
-      padding: 1rem 1rem 0.9rem;
+      padding: 1rem;
     }
 
     .info-panel h4 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      color: var(--dark);
-      margin-bottom: 0.9rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+      font-weight: 800;
     }
 
-    .info-panel ul {
+    .info-panel ul,
+    .contribution-list,
+    .experience-list {
       list-style: none;
       display: grid;
-      gap: 0.65rem;
+      gap: 0.6rem;
     }
 
-    .info-panel li {
+    .info-panel li,
+    .contribution-list li,
+    .experience-list li {
       position: relative;
-      padding-left: 1.35rem;
+      padding-left: 1.1rem;
+      color: var(--text-soft);
       font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
     }
 
-    .subjects-panel li::before {
-      content: '▹';
+    .info-panel li::before,
+    .contribution-list li::before,
+    .experience-list li::before {
+      content: "";
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .achievements-panel li::before {
-      content: '★';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.85rem;
-      top: 0.18rem;
+      top: 0.62rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     .grade-badge {
       display: inline-flex;
       align-items: center;
-      background: rgba(142, 132, 127, 0.1);
-      color: var(--dark);
-      padding: 0.48rem 0.95rem;
+      margin-top: 1rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      font-size: 0.9rem;
+      background: rgba(124, 92, 70, 0.08);
+      font-size: 0.88rem;
       font-weight: 700;
+      color: var(--text);
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       margin-top: 1.2rem;
-      border: 1px solid rgba(182, 172, 167, 0.18);
     }
 
-    /* CERTIFICATIONS */
-    .certifications-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 5% 6rem;
-      position: relative;
-      z-index: 2;
+    .skill-card {
+      padding: 1.35rem;
     }
 
-    .certifications-header {
-      margin-bottom: 2rem;
+    .skill-top {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      margin-bottom: 0.9rem;
     }
 
-    .certifications-header h2 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 5vw, 2.7rem);
-      margin-bottom: 0.7rem;
-      color: var(--dark);
-    }
-
-    .certifications-header p {
-      color: var(--text-secondary);
-      max-width: 700px;
-    }
-
-    .certifications-grid {
+    .skill-icon,
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      place-items: center;
+      background: rgba(124, 92, 70, 0.08);
+      font-size: 1.15rem;
+      flex-shrink: 0;
     }
 
-    .certification-card {
-      background: rgba(255,255,255,0.78);
-      padding: 1.6rem;
-      border-radius: 22px;
-      border: 1px solid rgba(182, 172, 167, 0.34);
-      transition: all 0.3s ease;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+    .skill-top h3 {
+      font-size: 1.08rem;
+      margin-bottom: 0.25rem;
     }
 
-    .certification-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(142, 132, 127, 0.4);
+    .projects-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 1.2rem;
     }
 
-    .certification-label {
-      display: inline-block;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(142, 132, 127, 0.1);
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .project-card,
+    .experience-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-top,
+    .experience-top {
+      padding: 1.45rem 1.45rem 1rem;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(124, 92, 70, 0.06), transparent),
+        rgba(255,255,255,0.38);
+      border-bottom: 1px solid rgba(120, 113, 108, 0.08);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
       margin-bottom: 0.8rem;
     }
 
-    .certification-card h3 {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
+    .project-title {
+      font-size: 1.8rem;
+      line-height: 1.08;
       margin-bottom: 0.55rem;
-      color: var(--dark);
+    }
+
+    .project-body,
+    .experience-body {
+      padding: 1.3rem 1.45rem 1.45rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .project-section h3,
+    .experience-body h3 {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+      font-weight: 800;
+    }
+
+    .project-section p {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+    }
+
+    .experience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 1.2rem;
+    }
+
+    .experience-role {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .experience-date {
+      display: inline-block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 70, 0.08);
+      color: var(--text-soft);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .certifications-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.2rem;
+    }
+
+    .cert-card {
+      padding: 1.4rem;
+    }
+
+    .cert-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.45rem;
     }
 
     .provider {
-      font-size: 0.96rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.45rem;
+      font-size: 0.95rem;
     }
 
     .date {
       font-size: 0.88rem;
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* FOOTER */
+    .tools-card,
+    .contact-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    .tools-card h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      margin-bottom: 0.7rem;
+    }
+
+    .tools-card p {
+      max-width: 64ch;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 0.6rem;
+    }
+
     footer {
-      text-align: center;
-      padding: 2.2rem 5%;
-      background: rgba(255,255,255,0.82);
-      border-top: 1px solid rgba(182, 172, 167, 0.22);
-      color: var(--text-secondary);
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
       font-size: 0.92rem;
-      position: relative;
-      z-index: 2;
     }
 
-    /* ANIMATIONS */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
     }
 
-    /* MOBILE */
-    @media (max-width: 900px) {
-      .summary-card {
+    .social-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .summary-card,
+      .skills-grid,
+      .projects-grid,
+      .experience-grid,
+      .certifications-grid,
+      .education-grid,
+      .hero-metrics {
         grid-template-columns: 1fr;
       }
-
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 1rem 5%;
+    @media (max-width: 760px) {
+      .nav-shell {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       nav {
         gap: 1rem;
-        justify-content: center;
       }
 
-      nav a {
-        font-size: 0.86rem;
-      }
-
-      nav img {
-        width: 14px;
-        height: 14px;
-      }
-
-      .page-header {
-        padding: 4rem 5% 2rem;
+      .tools-card,
+      .contact-card {
+        padding: 1.5rem;
       }
 
       .education-timeline {
@@ -551,214 +908,686 @@
       .education-item::before {
         left: -1.95rem;
       }
-
-      .education-card {
-        padding: 1.5rem;
-      }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 560px) {
       nav {
-        gap: 0.8rem;
-        flex-wrap: wrap;
+        width: 100%;
       }
 
-      nav a span {
-        display: none;
+      .nav-cta,
+      .btn-primary,
+      .btn-secondary,
+      .btn-muted {
+        width: 100%;
       }
 
-      nav img {
-        width: 18px;
-        height: 18px;
+      .hero-actions,
+      .cta-actions,
+      .project-actions {
+        flex-direction: column;
       }
 
-      .summary-card,
-      .education-card,
-      .certification-card {
-        padding: 1.2rem;
-      }
-
-      .education-card h3 {
-        font-size: 1.6rem;
+      .hero h1 {
+        max-width: none;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="">
-        <span>Home</span>
+    <div class="nav-shell">
+      <a href="#home" class="brand">
+        <strong>Varisha Mohsin</strong>
+        <span>Aspiring Software Developer</span>
       </a>
-      <a href="education.html" class="active">
-        <img src="https://cdn-icons-png.flaticon.com/512/3235/3235733.png" alt="">
-        <span>Education</span>
-      </a>
-      <a href="skills.html">
-        <img src="https://png.pngtree.com/png-vector/20230412/ourmid/pngtree-key-skills-line-icon-vector-png-image_6703008.png" alt="">
-        <span>Skills</span>
-      </a>
-      <a href="projects.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920304.png" alt="">
-        <span>Projects</span>
-      </a>
-      <a href="experience.html">
-        <img src="https://cdn-icons-png.flaticon.com/512/3504/3504016.png" alt="">
-        <span>Experience</span>
-      </a>
-    </nav>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact">Contact Me</a>
+    </div>
   </header>
 
-  <section class="page-header">
-    <span class="eyebrow">Academic Background</span>
-    <h1>Education</h1>
-    <p>
-      My academic journey has given me a strong foundation in Computer Science, mathematics, and analytical thinking.
-      During my gap year, I have continued building on that foundation through independent technical learning and practical projects.
-    </p>
-  </section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <div class="eyebrow">Open to junior opportunities</div>
+            <h1>I build <span class="soft">clean, useful</span> digital products with code.</h1>
+            <p class="hero-subtitle">
+              I’m Varisha Mohsin, an aspiring software developer with strong foundations in Python, JavaScript, HTML, CSS, and basic SQL.
+            </p>
+            <p class="hero-description">
+              I’m currently building my skills through practical projects, independent learning, and continuous improvement. I care about writing clear code, solving real problems, and creating products that feel polished and easy to use.
+            </p>
 
-  <section class="summary-strip">
-    <div class="summary-card">
-      <div class="summary-item">
-        <strong>Computer Science Focus</strong>
-        <span>Built around programming, computational thinking, and software development.</span>
-      </div>
-      <div class="summary-item">
-        <strong>Analytical Foundation</strong>
-        <span>Strengthened by mathematics and physics alongside technical study.</span>
-      </div>
-      <div class="summary-item">
-        <strong>Continuous Learning</strong>
-        <span>Supported by independent study in web development, Python, and databases.</span>
-      </div>
-    </div>
-  </section>
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">View My Projects</a>
+              <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
 
-  <section class="education-section">
-    <h2 class="section-title">Academic Timeline</h2>
-
-    <div class="education-timeline">
-
-      <article class="education-item">
-        <div class="education-card">
-          <div class="education-top">
-            <div>
-              <span class="education-period">2023 – 2025</span>
-              <h3>A-Levels</h3>
-              <p class="institution">Sixth Form College</p>
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>Programming Focus</strong>
+                <span>Python, JavaScript, HTML, CSS, basic SQL</span>
+              </div>
+              <div class="metric">
+                <strong>Project Driven</strong>
+                <span>Learning by building practical software</span>
+              </div>
+              <div class="metric">
+                <strong>Career Ready</strong>
+                <span>Seeking opportunities to learn and contribute</span>
+              </div>
             </div>
           </div>
 
-          <p class="description">
-            Studied A-Levels with a strong focus on Computer Science, supported by Mathematics and Physics.
-            This combination strengthened both my technical understanding and my problem-solving ability,
-            helping me develop a deeper appreciation for algorithms, logic, and structured thinking.
-          </p>
+          <div class="reveal">
+            <div class="panel">
+              <h2>Varisha Mohsin</h2>
+              <p>Aspiring Software Developer</p>
 
-          <div class="education-grid">
-            <div class="info-panel subjects-panel">
-              <h4>Key Subjects</h4>
-              <ul>
-                <li>Computer Science</li>
-                <li>Mathematics</li>
-                <li>Physics</li>
-              </ul>
-            </div>
+              <div class="profile-list">
+                <div class="profile-item">
+                  <strong>What I bring</strong>
+                  <span>Strong foundations, curiosity, and a genuine willingness to learn quickly.</span>
+                </div>
+                <div class="profile-item">
+                  <strong>What I’m aiming for</strong>
+                  <span>Junior developer, internship, and early-career software opportunities.</span>
+                </div>
+                <div class="profile-item">
+                  <strong>What matters to me</strong>
+                  <span>Readable code, clear thinking, practical problem-solving, and user-friendly products.</span>
+                </div>
+              </div>
 
-            <div class="info-panel achievements-panel">
-              <h4>Notable Academic Work</h4>
-              <ul>
-                <li>NEA project based on projectile motion and educational software design.</li>
-                <li>Applied programming concepts to build an interactive solution with a real learning purpose.</li>
-              </ul>
+              <div class="tag-row">
+                <div class="tag">Python</div>
+                <div class="tag">JavaScript</div>
+                <div class="tag">HTML</div>
+                <div class="tag">CSS</div>
+                <div class="tag">Basic SQL</div>
+              </div>
             </div>
           </div>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="education-item">
-        <div class="education-card">
-          <div class="education-top">
-            <div>
-              <span class="education-period">2018 – 2023</span>
-              <h3>GCSE Qualifications</h3>
-              <p class="institution">Secondary School</p>
-            </div>
-          </div>
-
-          <p class="description">
-            Completed GCSE studies across a broad range of subjects, building a solid academic base
-            and developing the discipline, communication skills, and subject knowledge that prepared me for advanced study.
+    <section class="section" id="education">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Academic Background</div>
+          <h2 class="section-title">Education that built my foundation.</h2>
+          <p class="section-copy">
+            My education gave me a strong foundation in Computer Science, mathematics, and analytical thinking. During my gap year, I’ve continued building on that foundation through independent technical learning and practical projects.
           </p>
+        </div>
 
-          <div class="education-grid">
-            <div class="info-panel subjects-panel">
-              <h4>Core Subjects</h4>
-              <ul>
-                <li>Computer Science</li>
-                <li>Mathematics</li>
-                <li>English Language</li>
-                <li>Physics</li>
-                <li>Biology</li>
-                <li>Chemistry</li>
+        <div class="summary-card">
+          <div class="summary-item">
+            <strong>Computer Science focus</strong>
+            <span>Built around programming, computational thinking, and structured problem-solving.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Analytical foundation</strong>
+            <span>Strengthened by mathematics and physics alongside technical study.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Continuous learning</strong>
+            <span>Supported by self-directed learning in web development, Python, and basic databases.</span>
+          </div>
+        </div>
+
+        <div class="education-timeline">
+          <article class="education-item">
+            <div class="education-card">
+              <div class="education-top">
+                <div>
+                  <span class="education-period">2023 – 2025</span>
+                  <h3>A-Levels</h3>
+                  <p class="institution">Sixth Form College</p>
+                </div>
+              </div>
+
+              <p class="description">
+                Studied A-Levels with a strong focus on Computer Science, supported by Mathematics and Physics. This combination strengthened my technical understanding, logical thinking, and confidence in solving structured problems.
+              </p>
+
+              <div class="education-grid">
+                <div class="info-panel">
+                  <h4>Key Subjects</h4>
+                  <ul>
+                    <li>Computer Science</li>
+                    <li>Mathematics</li>
+                    <li>Physics</li>
+                  </ul>
+                </div>
+
+                <div class="info-panel">
+                  <h4>Notable Academic Work</h4>
+                  <ul>
+                    <li>Created an NEA project based on projectile motion and educational software design.</li>
+                    <li>Applied programming and problem-solving skills to build an interactive learning tool.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="education-item">
+            <div class="education-card">
+              <div class="education-top">
+                <div>
+                  <span class="education-period">2018 – 2023</span>
+                  <h3>GCSE Qualifications</h3>
+                  <p class="institution">Secondary School</p>
+                </div>
+              </div>
+
+              <p class="description">
+                Completed GCSE studies across a broad range of subjects, building a solid academic base and developing the discipline, communication skills, and subject knowledge that prepared me for further study in computing and technology.
+              </p>
+
+              <div class="education-grid">
+                <div class="info-panel">
+                  <h4>Core Subjects</h4>
+                  <ul>
+                    <li>Computer Science</li>
+                    <li>Mathematics</li>
+                    <li>English Language</li>
+                    <li>Physics</li>
+                    <li>Biology</li>
+                    <li>Chemistry</li>
+                  </ul>
+                </div>
+
+                <div class="info-panel">
+                  <h4>Academic Strengths</h4>
+                  <ul>
+                    <li>Strong foundation across analytical and scientific subjects.</li>
+                    <li>Early interest in computing, logic, and technical learning.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <span class="grade-badge">Strong academic foundation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Technical Profile</div>
+          <h2 class="section-title">Skills that support how I build software.</h2>
+          <p class="section-copy">
+            My current technical profile is built around programming fundamentals, web development, and project-based learning. I focus on being honest about what I know while continuing to improve quickly.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🐍</div>
+              <div>
+                <h3>Python</h3>
+                <div class="skill-level">Strong working knowledge</div>
+              </div>
+            </div>
+            <p>
+              I’m confident using Python for structured programming, logic building, and problem solving. It has helped me strengthen software fundamentals and algorithmic thinking.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Problem solving</span>
+              <span class="skill-tag">Logic</span>
+              <span class="skill-tag">Structured programming</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">📜</div>
+              <div>
+                <h3>JavaScript</h3>
+                <div class="skill-level">Growing confidence</div>
+              </div>
+            </div>
+            <p>
+              I use JavaScript to add interactivity and functionality to web projects, including event handling, DOM updates, and user interaction.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">DOM</span>
+              <span class="skill-tag">Events</span>
+              <span class="skill-tag">Web interactivity</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🌐</div>
+              <div>
+                <h3>HTML & CSS</h3>
+                <div class="skill-level">Confident</div>
+              </div>
+            </div>
+            <p>
+              I have a strong foundation in semantic HTML and modern CSS for building responsive layouts, polished pages, and user-friendly interfaces.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Responsive design</span>
+              <span class="skill-tag">Layout</span>
+              <span class="skill-tag">Styling</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🗃️</div>
+              <div>
+                <h3>Basic SQL</h3>
+                <div class="skill-level">School-level foundation</div>
+              </div>
+            </div>
+            <p>
+              I have a basic understanding of SQL from school, including simple queries and working with core relational data concepts.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Basic queries</span>
+              <span class="skill-tag">Relational data</span>
+              <span class="skill-tag">Database concepts</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🧩</div>
+              <div>
+                <h3>Problem Solving</h3>
+                <div class="skill-level">Strong</div>
+              </div>
+            </div>
+            <p>
+              I approach technical problems by breaking them into smaller parts, working logically, and improving step by step through testing and iteration.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Analysis</span>
+              <span class="skill-tag">Debugging</span>
+              <span class="skill-tag">Structured thinking</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-top">
+              <div class="skill-icon">🔧</div>
+              <div>
+                <h3>Development Workflow</h3>
+                <div class="skill-level">Working knowledge</div>
+              </div>
+            </div>
+            <p>
+              I use Git, GitHub, VS Code, and browser developer tools while building projects and improving how I work as a developer.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Portfolio Projects</div>
+          <h2 class="section-title">Projects that show how I build and think.</h2>
+          <p class="section-copy">
+            These projects reflect my growth across frontend development, programming logic, usability, and practical problem-solving.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-meta">
+                <div class="project-icon">🎯</div>
+                <div class="project-type">Educational Web App</div>
+              </div>
+              <h3 class="project-title">Physics Projectile Game</h3>
+              <p class="project-intro">
+                An interactive educational game designed to help students understand projectile motion through visual and engaging gameplay.
+              </p>
+            </div>
+            <div class="project-body">
+              <div class="project-section">
+                <h3>What I built</h3>
+                <p>
+                  I created a browser-based learning tool that combines gameplay with educational purpose, making a difficult topic more visual and easier to explore.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Matter.js</span>
+              </div>
+              <ul class="contribution-list">
+                <li>Applied physics logic to create more realistic projectile behaviour.</li>
+                <li>Focused on balancing learning value with interactivity.</li>
+                <li>Built around a clear real educational objective.</li>
+              </ul>
+              <div class="project-actions">
+                <span class="btn-muted">GitHub link coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-meta">
+                <div class="project-icon">📚</div>
+                <div class="project-type">Productivity App</div>
+              </div>
+              <h3 class="project-title">Revision App</h3>
+              <p class="project-intro">
+                A study-focused app designed to help students organise notes, revision goals, and academic tasks in one place.
+              </p>
+            </div>
+            <div class="project-body">
+              <div class="project-section">
+                <h3>What I built</h3>
+                <p>
+                  I built this project to solve a practical study-planning problem and strengthen my understanding of more structured application design.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">SQLite</span>
+              </div>
+              <ul class="contribution-list">
+                <li>Focused on solving a genuine user need.</li>
+                <li>Worked with a more structured app setup and stored data.</li>
+                <li>Strengthened my understanding of application flow.</li>
+              </ul>
+              <div class="project-actions">
+                <span class="btn-muted">GitHub link coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-meta">
+                <div class="project-icon">🍲</div>
+                <div class="project-type">Frontend Web Project</div>
+              </div>
+              <h3 class="project-title">Cooking Website</h3>
+              <p class="project-intro">
+                A recipe website created to preserve and present my mother’s recipes in a clean, accessible format.
+              </p>
+            </div>
+            <div class="project-body">
+              <div class="project-section">
+                <h3>What I built</h3>
+                <p>
+                  This project focused on content structure, intuitive browsing, and turning personal content into a polished and usable web experience.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <ul class="contribution-list">
+                <li>Focused on layout clarity and easy navigation.</li>
+                <li>Used a personal idea to demonstrate design thinking.</li>
+                <li>Strengthened front-end development confidence.</li>
+              </ul>
+              <div class="project-actions">
+                <span class="btn-muted">GitHub link coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-meta">
+                <div class="project-icon">✅</div>
+                <div class="project-type">Utility App</div>
+              </div>
+              <h3 class="project-title">To-Do List Application</h3>
+              <p class="project-intro">
+                A responsive task manager built to help users organise priorities and keep track of progress.
+              </p>
+            </div>
+            <div class="project-body">
+              <div class="project-section">
+                <h3>What I built</h3>
+                <p>
+                  I created a simple but practical app that helped me improve front-end logic, persistence, and making a product feel easy to use.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Local Storage</span>
+              </div>
+              <ul class="contribution-list">
+                <li>Built clear task functionality and user flow.</li>
+                <li>Used local storage to keep data in the browser.</li>
+                <li>Focused on simplicity and usability.</li>
+              </ul>
+              <div class="project-actions">
+                <span class="btn-muted">GitHub link coming soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div class="project-meta">
+                <div class="project-icon">🧮</div>
+                <div class="project-type">Interactive JavaScript Project</div>
+              </div>
+              <h3 class="project-title">Calculator</h3>
+              <p class="project-intro">
+                A responsive calculator project built to strengthen programming logic, event handling, and interface structure.
+              </p>
+            </div>
+            <div class="project-body">
+              <div class="project-section">
+                <h3>What I built</h3>
+                <p>
+                  This project helped me reinforce core JavaScript fundamentals and focus on making interaction logic work reliably.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <ul class="contribution-list">
+                <li>Strengthened event handling and input logic.</li>
+                <li>Focused on correctness and clean structure.</li>
+                <li>Used a simple project to build technical confidence.</li>
+              </ul>
+              <div class="project-actions">
+                <span class="btn-muted">GitHub link coming soon</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Professional Exposure</div>
+          <h2 class="section-title">Experience that shaped how I work and learn.</h2>
+          <p class="section-copy">
+            My experience so far includes early exposure to both computing and business environments. These placements helped me build confidence in professional settings and strengthen transferable skills such as communication, adaptability, curiosity, and learning quickly.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="experience-top">
+              <div class="experience-label">Computing Placement</div>
+              <h2>DV Telecom Service</h2>
+              <div class="experience-role">Work Experience</div>
+              <div class="experience-date">June 2022</div>
+            </div>
+            <div class="experience-body">
+              <h3>Overview</h3>
+              <p>
+                This placement gave me insight into a computing-focused environment and introduced me to the practical side of technical systems, troubleshooting, and workplace communication.
+              </p>
+              <h3>What I gained</h3>
+              <ul class="experience-list">
+                <li>Observed how technical teams worked with network-related systems and everyday technical tasks.</li>
+                <li>Developed a better understanding of troubleshooting and practical problem-solving.</li>
+                <li>Learned from professionals by asking questions, listening carefully, and taking on feedback.</li>
               </ul>
             </div>
+          </article>
 
-            <div class="info-panel achievements-panel">
-              <h4>Academic Strengths</h4>
-              <ul>
-                <li>Strong performance across core analytical and scientific subjects.</li>
-                <li>Established the foundation for later study in computing and technology.</li>
+          <article class="experience-card">
+            <div class="experience-top">
+              <div class="experience-label">Business Placement</div>
+              <h2>AON</h2>
+              <div class="experience-role">Work Experience</div>
+              <div class="experience-date">July 2024</div>
+            </div>
+            <div class="experience-body">
+              <h3>Overview</h3>
+              <p>
+                This experience gave me exposure to a professional corporate environment and helped me understand how large organisations communicate, organise work, and solve problems in business settings.
+              </p>
+              <h3>What I gained</h3>
+              <ul class="experience-list">
+                <li>Built awareness of professional communication, teamwork, and workplace expectations.</li>
+                <li>Gained insight into how analytical thinking is applied in business and finance-related work.</li>
+                <li>Strengthened my confidence in adapting to new environments and learning quickly from experience.</li>
               </ul>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Additional Learning</div>
+          <h2 class="section-title">Ongoing development outside formal education.</h2>
+          <p class="section-copy">
+            Alongside formal study, I’ve continued improving through practical projects, self-directed learning, and consistent technical practice.
+          </p>
+        </div>
+
+        <div class="certifications-grid">
+          <article class="cert-card">
+            <div class="certification-label">Programming</div>
+            <h3>Python Development</h3>
+            <p class="provider">Independent learning and project-based practice</p>
+            <p class="date">Ongoing</p>
+          </article>
+
+          <article class="cert-card">
+            <div class="certification-label">Web Development</div>
+            <h3>Frontend Fundamentals</h3>
+            <p class="provider">Self-directed learning through HTML, CSS, JavaScript, and portfolio projects</p>
+            <p class="date">Ongoing</p>
+          </article>
+
+          <article class="cert-card">
+            <div class="certification-label">Databases</div>
+            <h3>Basic SQL Foundations</h3>
+            <p class="provider">School learning and basic applied practice</p>
+            <p class="date">Current foundation</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="tools-card">
+          <h2>Tools & technologies</h2>
+          <p>
+            Tools and environments I use while learning, building, and improving my workflow as a developer.
+          </p>
+          <div class="tools-grid">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">JavaScript</span>
+            <span class="tool-badge">HTML</span>
+            <span class="tool-badge">CSS</span>
+            <span class="tool-badge">Basic SQL</span>
+            <span class="tool-badge">Git</span>
+            <span class="tool-badge">GitHub</span>
+            <span class="tool-badge">VS Code</span>
+            <span class="tool-badge">Chrome DevTools</span>
+            <span class="tool-badge">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container reveal">
+        <div class="contact-card">
+          <div>
+            <h2>Let’s connect.</h2>
+            <p>
+              If you’re hiring for a junior, internship, or early-career software role, I’d love to hear from you.
+            </p>
           </div>
 
-          <span class="grade-badge">Strong Academic Performance</span>
+          <div class="cta-actions">
+            <a href="mailto:varisha.mohsin@hotmail.co.uk" class="btn-primary">Email Me</a>
+            <a href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+          </div>
         </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="certifications-section">
-    <div class="certifications-header">
-      <h2>Additional Learning & Technical Development</h2>
-      <p>
-        Alongside formal education, I have continued strengthening my technical skills through independent study
-        and hands-on project work in programming, web development, and databases.
-      </p>
-    </div>
-
-    <div class="certifications-grid">
-
-      <div class="certification-card">
-        <span class="certification-label">Programming</span>
-        <h3>Python Programming</h3>
-        <p class="provider">Independent learning and online technical study</p>
-        <p class="date">Completed in 2024</p>
       </div>
-
-      <div class="certification-card">
-        <span class="certification-label">Web Development</span>
-        <h3>Web Development Fundamentals</h3>
-        <p class="provider">Self-directed learning through practical projects</p>
-        <p class="date">Ongoing</p>
-      </div>
-
-      <div class="certification-card">
-        <span class="certification-label">Databases</span>
-        <h3>SQL & Database Management</h3>
-        <p class="provider">Independent technical learning and applied practice</p>
-        <p class="date">Completed in 2024</p>
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Varisha Mohsin. Designed and developed with care.</p>
+    <div class="container">
+      <div class="footer-row">
+        <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
+        <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
