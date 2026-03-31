@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varisha Mohsin | Aspiring Software Developer</title>
+  <title>Varisha Mohsin | Student Developer Portfolio</title>
   <meta
     name="description"
-    content="Varisha Mohsin is an aspiring software developer building clean, user-focused web projects with Python, JavaScript, HTML, CSS, and growing React skills."
+    content="Varisha Mohsin is a student and aspiring software developer building clean, practical, user-focused web projects with Python, JavaScript, HTML, CSS, and growing React skills."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     * {
@@ -20,20 +23,21 @@
     }
 
     :root {
-      --bg: #f7f4ef;
-      --bg-secondary: #efe8df;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --text: #171717;
-      --text-soft: #57534e;
-      --muted: #7c756e;
-      --line: rgba(120, 113, 108, 0.18);
-      --accent: #7c5c46;
-      --accent-2: #a27d62;
-      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
-      --shadow-hover: 0 20px 50px rgba(25, 25, 25, 0.13);
+      --bg: #f8f9fb;
+      --bg-soft: #f1f3f5;
+      --surface: #ffffff;
+      --surface-2: #f7f7f8;
+      --text: #111827;
+      --text-soft: #4b5563;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --line-dark: #d1d5db;
+      --accent: #111827;
+      --accent-soft: #374151;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+      --shadow-hover: 0 16px 40px rgba(17, 24, 39, 0.1);
       --radius: 24px;
-      --max-width: 1180px;
+      --max-width: 1160px;
     }
 
     html {
@@ -41,47 +45,29 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 26%),
-        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
-        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.03;
-      background-image:
-        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
-        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
-      background-size: 24px 24px, 28px 28px;
-      z-index: 0;
-    }
-
     ::selection {
-      background: rgba(124, 92, 70, 0.18);
+      background: #e5e7eb;
+      color: var(--text);
     }
 
     .container {
       width: min(var(--max-width), 92%);
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(247, 244, 239, 0.82);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
 
@@ -100,24 +86,25 @@
       color: var(--text);
       display: inline-flex;
       flex-direction: column;
-      line-height: 1.1;
+      line-height: 1.15;
     }
 
     .brand strong {
       font-size: 1rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     .brand span {
       font-size: 0.82rem;
       color: var(--muted);
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.4rem;
       flex-wrap: wrap;
     }
 
@@ -134,10 +121,10 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -0.4rem;
+      bottom: -0.38rem;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: var(--text);
       transition: width 0.25s ease;
     }
 
@@ -153,30 +140,29 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.8rem 1.15rem;
+      padding: 0.85rem 1.2rem;
       border-radius: 999px;
       background: var(--text);
-      color: #fff;
+      color: #ffffff;
       text-decoration: none;
       font-size: 0.92rem;
       font-weight: 700;
       transition: 0.3s ease;
-      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.12);
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
+      background: #000000;
     }
 
-    /* HERO */
     .hero {
-      padding: 6.5rem 0 4rem;
-      position: relative;
+      padding: 7rem 0 4rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
       align-items: center;
     }
@@ -185,39 +171,37 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.45rem 0.85rem;
+      padding: 0.5rem 0.9rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(124, 92, 70, 0.14);
-      color: var(--accent);
-      font-size: 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--accent-soft);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
       margin-bottom: 1.25rem;
-      backdrop-filter: blur(10px);
     }
 
     .hero h1 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 6.2vw, 5.4rem);
-      line-height: 0.98;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 6vw, 5.3rem);
+      line-height: 1;
       letter-spacing: -0.04em;
       margin-bottom: 1.2rem;
       max-width: 11ch;
     }
 
     .hero h1 .soft {
-      color: var(--muted);
+      color: #6b7280;
       font-style: italic;
-      font-weight: 600;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
       color: var(--text-soft);
       max-width: 62ch;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .hero-description {
@@ -249,48 +233,46 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: white;
-      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+      background: var(--text);
+      color: #ffffff;
+      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+      background: #000000;
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.65);
+      background: #ffffff;
       color: var(--text);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      border: 1px solid var(--line-dark);
     }
 
     .btn-secondary:hover {
       transform: translateY(-3px);
-      border-color: rgba(124, 92, 70, 0.35);
+      border-color: #9ca3af;
+      background: #f9fafb;
     }
 
     .hero-metrics {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.9rem;
-      max-width: 720px;
     }
 
     .metric {
-      background: rgba(255,255,255,0.64);
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 1rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(25, 25, 25, 0.04);
+      box-shadow: var(--shadow);
     }
 
     .metric strong {
       display: block;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
     }
 
     .metric span {
@@ -304,25 +286,14 @@
 
     .profile-card,
     .focus-card {
-      border-radius: var(--radius);
       background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(16px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .profile-card {
       padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), transparent);
     }
 
     .profile-top {
@@ -333,21 +304,20 @@
     }
 
     .avatar {
-      width: 64px;
-      height: 64px;
+      width: 66px;
+      height: 66px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #e6d8ca, #b99072);
-      color: var(--text);
+      background: linear-gradient(135deg, #111827, #4b5563);
+      color: #ffffff;
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 1.15rem;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+      font-size: 1.1rem;
     }
 
     .profile-top h2 {
-      font-size: 1.05rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.06rem;
+      margin-bottom: 0.15rem;
     }
 
     .profile-top p {
@@ -357,13 +327,13 @@
 
     .profile-list {
       display: grid;
-      gap: 0.9rem;
+      gap: 0.85rem;
       margin: 1rem 0 1.2rem;
     }
 
     .profile-item {
-      padding: 0.95rem 1rem;
-      background: rgba(255,255,255,0.66);
+      padding: 1rem;
+      background: var(--surface-2);
       border: 1px solid var(--line);
       border-radius: 16px;
     }
@@ -371,7 +341,7 @@
     .profile-item strong {
       display: block;
       font-size: 0.92rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
 
     .profile-item span {
@@ -386,12 +356,13 @@
     }
 
     .tag {
-      padding: 0.5rem 0.75rem;
+      padding: 0.48rem 0.78rem;
       border-radius: 999px;
-      background: rgba(124, 92, 70, 0.08);
-      color: var(--accent);
+      background: #f3f4f6;
+      color: var(--accent-soft);
       font-size: 0.82rem;
       font-weight: 700;
+      border: 1px solid var(--line);
     }
 
     .focus-card {
@@ -401,7 +372,7 @@
 
     .focus-card h3 {
       font-size: 1rem;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.5rem;
     }
 
     .focus-card p {
@@ -409,17 +380,16 @@
       font-size: 0.94rem;
     }
 
-    /* VALUE SECTION */
     .section {
-      padding: 2.5rem 0;
+      padding: 2.8rem 0;
     }
 
     .section-head {
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.8rem;
     }
 
     .section-kicker {
-      color: var(--accent);
+      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-size: 0.78rem;
@@ -428,10 +398,10 @@
     }
 
     .section-title {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1.05;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.75rem;
       letter-spacing: -0.03em;
     }
 
@@ -440,23 +410,77 @@
       max-width: 62ch;
     }
 
-    .value-grid {
+    .about-grid,
+    .value-grid,
+    .path-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
     }
 
-    .value-card {
-      background: rgba(255,255,255,0.7);
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+
+    .about-card,
+    .about-side,
+    .value-card,
+    .path-card {
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.5rem;
+      border-radius: 24px;
       box-shadow: var(--shadow);
+    }
+
+    .about-card,
+    .about-side {
+      padding: 1.6rem;
+    }
+
+    .about-card p,
+    .about-side p {
+      color: var(--text-soft);
+      margin-bottom: 1rem;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .about-point {
+      padding: 0.95rem 1rem;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .about-point strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.92rem;
+    }
+
+    .about-point span {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .value-card {
+      padding: 1.5rem;
       transition: 0.3s ease;
     }
 
-    .value-card:hover {
-      transform: translateY(-6px);
+    .value-card:hover,
+    .path-card:hover,
+    .about-card:hover,
+    .about-side:hover {
+      transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
     }
 
@@ -467,14 +491,15 @@
       border-radius: 12px;
       align-items: center;
       justify-content: center;
-      background: rgba(124, 92, 70, 0.08);
-      color: var(--accent);
+      background: #f3f4f6;
+      border: 1px solid var(--line);
+      color: var(--text);
       font-weight: 800;
       margin-bottom: 1rem;
     }
 
     .value-card h3 {
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.6rem;
       font-size: 1.08rem;
     }
 
@@ -483,21 +508,14 @@
       font-size: 0.95rem;
     }
 
-    /* FEATURED PATHS */
     .path-grid {
-      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
     }
 
     .path-card {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
-      border-radius: 24px;
       padding: 1.6rem;
       text-decoration: none;
       color: var(--text);
-      box-shadow: var(--shadow);
       transition: 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -509,16 +527,10 @@
       right: 1.2rem;
       top: 1rem;
       font-size: 1.2rem;
-      color: var(--accent);
+      color: var(--text-soft);
       opacity: 0;
       transform: translateX(-6px);
       transition: 0.25s ease;
-    }
-
-    .path-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(124, 92, 70, 0.28);
     }
 
     .path-card:hover::after {
@@ -531,13 +543,13 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--accent);
+      color: var(--muted);
       font-weight: 800;
       margin-bottom: 0.7rem;
     }
 
     .path-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       margin-bottom: 0.55rem;
     }
 
@@ -547,9 +559,8 @@
       max-width: 42ch;
     }
 
-    /* CONTACT */
     .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 2rem;
@@ -562,7 +573,7 @@
     }
 
     .contact-card h2 {
-      font-family: 'Crimson Pro', serif;
+      font-family: "Playfair Display", serif;
       font-size: clamp(2rem, 4vw, 2.8rem);
       line-height: 1;
       margin-bottom: 0.6rem;
@@ -570,7 +581,7 @@
 
     .contact-card p {
       color: var(--text-soft);
-      max-width: 54ch;
+      max-width: 56ch;
     }
 
     .contact-actions {
@@ -579,7 +590,6 @@
       flex-wrap: wrap;
     }
 
-    /* FOOTER */
     footer {
       padding: 2rem 0 2.5rem;
       color: var(--muted);
@@ -603,13 +613,12 @@
     }
 
     .social-link:hover {
-      color: var(--accent);
+      color: var(--text);
     }
 
-    /* REVEAL */
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(24px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
@@ -618,9 +627,9 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 980px) {
       .hero-grid,
+      .about-grid,
       .value-grid,
       .path-grid {
         grid-template-columns: 1fr;
@@ -628,10 +637,6 @@
 
       .hero {
         padding-top: 5rem;
-      }
-
-      .hero-panel {
-        max-width: 720px;
       }
     }
 
@@ -687,18 +692,19 @@
     <div class="nav-shell">
       <a href="#home" class="brand">
         <strong>Varisha Mohsin</strong>
-        <span>Aspiring Software Developer</span>
+        <span>Student Developer Portfolio</span>
       </a>
 
       <nav>
         <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="experience.html">Experience</a>
         <a href="education.html">Education</a>
       </nav>
 
-      <a class="nav-cta" href="#contact">Contact Me</a>
+      <a class="nav-cta" href="#contact">Contact</a>
     </div>
   </header>
 
@@ -707,37 +713,37 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-copy reveal">
-            <div class="eyebrow">Open to software opportunities</div>
+            <div class="eyebrow">Student • Aspiring Software Developer</div>
 
             <h1>
-              I build <span class="soft">clean, useful</span> digital products with code.
+              Building <span class="soft">clean, practical</span> digital experiences.
             </h1>
 
             <p class="hero-subtitle">
-              I’m Varisha Mohsin, an aspiring software developer with a strong interest in building practical, user-focused web applications. My current skills are in Python, JavaScript, HTML, and CSS, and I’m continuing to grow through projects while learning React and more advanced tools.
+              I’m Varisha Mohsin, a student and aspiring software developer with a strong interest in creating user-focused web projects. I enjoy building in my free time, learning through hands-on work, and turning ideas into polished, functional websites and applications.
             </p>
 
             <p class="hero-description">
-              I care about writing clear code, solving real problems, and creating products that feel polished and intuitive to use. As an early-career developer, I’m building my experience through practical projects that strengthen my technical skills, problem-solving, and confidence as I continue learning.
+              My current skills include Python, JavaScript, HTML, and CSS, and I’m continuing to grow through personal projects while learning React and strengthening my development knowledge. I’m especially interested in writing clear code, improving my problem-solving, and building projects that are both useful and well designed.
             </p>
 
             <div class="hero-actions">
               <a href="projects.html" class="btn-primary">View My Projects</a>
-              <a href="#contact" class="btn-secondary">Get In Touch</a>
+              <a href="#about" class="btn-secondary">About Me</a>
             </div>
 
             <div class="hero-metrics">
               <div class="metric">
-                <strong>Web Development Focus</strong>
-                <span>Frontend development, programming fundamentals, and user-centred thinking</span>
+                <strong>Student Mindset</strong>
+                <span>Always learning, improving, and building stronger technical confidence</span>
               </div>
               <div class="metric">
-                <strong>Project Driven</strong>
-                <span>Building practical apps to strengthen real-world skills</span>
+                <strong>Project Based Growth</strong>
+                <span>Using personal projects to develop real skills outside the classroom</span>
               </div>
               <div class="metric">
-                <strong>Career Ready</strong>
-                <span>Seeking opportunities to contribute and keep learning</span>
+                <strong>Professional Focus</strong>
+                <span>Creating a portfolio that reflects both potential and genuine passion</span>
               </div>
             </div>
           </div>
@@ -748,31 +754,32 @@
                 <div class="avatar">VM</div>
                 <div>
                   <h2>Varisha Mohsin</h2>
-                  <p>Aspiring Software Developer</p>
+                  <p>Student Developer</p>
                 </div>
               </div>
 
               <div class="profile-list">
                 <div class="profile-item">
-                  <strong>What I bring</strong>
-                  <span>Strong foundations in programming and web development, clear communication, and a genuine focus on building useful products.</span>
+                  <strong>What I’m building</strong>
+                  <span>A strong portfolio of projects that show my technical growth, creativity, and commitment to improving as a developer.</span>
                 </div>
 
                 <div class="profile-item">
-                  <strong>What I’m aiming for</strong>
-                  <span>Junior developer, internship, and early-career opportunities where I can contribute, learn fast, and grow with a team.</span>
+                  <strong>What I’m looking for</strong>
+                  <span>Junior, internship, or early-career opportunities where I can learn, contribute, and continue developing real-world experience.</span>
                 </div>
 
                 <div class="profile-item">
                   <strong>What matters to me</strong>
-                  <span>Readable code, thoughtful UX, continuous improvement, and real impact.</span>
+                  <span>Clean code, thoughtful design, continuous learning, and building things that feel useful and polished.</span>
                 </div>
               </div>
 
               <div class="tag-row">
                 <div class="tag">Python</div>
                 <div class="tag">JavaScript</div>
-                <div class="tag">HTML & CSS</div>
+                <div class="tag">HTML</div>
+                <div class="tag">CSS</div>
                 <div class="tag">Learning React</div>
               </div>
             </div>
@@ -780,8 +787,53 @@
             <div class="focus-card">
               <h3>Current focus</h3>
               <p>
-                Building stronger portfolio projects, improving my front-end and programming skills, and continuing to learn React and more advanced development tools.
+                Building better portfolio projects, improving front-end development skills, and growing into a confident early-career software developer.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">About Me</div>
+          <h2 class="section-title">A student with a real interest in building with code.</h2>
+          <p class="section-copy">
+            I’m currently at the stage where I’m still learning, but I’ve found that the best way for me to grow is by actually making things. That’s why a lot of my progress comes from building projects in my own time, experimenting with ideas, and improving each time I create something new.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              I enjoy software development because it combines problem-solving, creativity, and structure. I like the process of turning an idea into something real, whether that means designing a clean interface, improving functionality, or making code more organised and readable.
+            </p>
+            <p>
+              As a student, I know I’m still developing my experience, but I also know I’m motivated, curious, and serious about improving. I want my portfolio to reflect not only what I can do now, but also the direction I’m heading in as I continue to learn and grow.
+            </p>
+            <p>
+              Outside of formal learning, I use my free time to work on coding projects, strengthen my technical skills, and explore better ways to build professional, user-friendly applications.
+            </p>
+          </div>
+
+          <div class="about-side">
+            <div class="about-points">
+              <div class="about-point">
+                <strong>My approach</strong>
+                <span>I learn best by building, testing, refining, and improving through real project work.</span>
+              </div>
+
+              <div class="about-point">
+                <strong>My interests</strong>
+                <span>Web development, front-end design, clean layouts, and creating smooth user experiences.</span>
+              </div>
+
+              <div class="about-point">
+                <strong>My goal</strong>
+                <span>To keep growing into a developer who can contribute confidently in professional environments.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -791,35 +843,35 @@
     <section class="section reveal">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Why this portfolio</div>
-          <h2 class="section-title">A homepage that speaks to employers, not just visitors.</h2>
+          <div class="section-kicker">What I bring</div>
+          <h2 class="section-title">More than coursework — I genuinely enjoy doing this.</h2>
           <p class="section-copy">
-            This portfolio is designed to show not only what I’ve built, but how I think: with clarity, structure, curiosity, and a strong willingness to learn and contribute.
+            This portfolio is designed to show both my current abilities and my potential. It reflects the way I approach development: with care, consistency, curiosity, and a genuine interest in improving over time.
           </p>
         </div>
 
         <div class="value-grid">
           <article class="value-card">
             <div class="number">01</div>
-            <h3>Technical foundation</h3>
+            <h3>Strong foundations</h3>
             <p>
-              I’m building strong foundations in programming and web development, and applying them through hands-on projects rather than theory alone.
+              I’m building solid skills in programming and web development, and strengthening them through practical project work.
             </p>
           </article>
 
           <article class="value-card">
             <div class="number">02</div>
-            <h3>Thoughtful product mindset</h3>
+            <h3>Personal initiative</h3>
             <p>
-              I care about more than just making something work. I want applications to feel intuitive, useful, and well put together.
+              I spend time outside of study working on projects because I genuinely enjoy learning how to build better digital experiences.
             </p>
           </article>
 
           <article class="value-card">
             <div class="number">03</div>
-            <h3>Growth and potential</h3>
+            <h3>Professional mindset</h3>
             <p>
-              I’m at the stage where I’m eager to learn quickly, take feedback seriously, and turn opportunity into strong professional growth.
+              I care about presenting my work well, learning from feedback, and growing into someone who can add value to a team.
             </p>
           </article>
         </div>
@@ -830,35 +882,35 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Explore</div>
-          <h2 class="section-title">See the work behind the homepage.</h2>
+          <h2 class="section-title">Take a look through the rest of my portfolio.</h2>
           <p class="section-copy">
-            Explore the rest of my portfolio to learn more about my projects, experience, technical skills, and academic background.
+            As I continue adding projects, this portfolio will grow with me. You can explore my work, skills, experience, and education below.
           </p>
         </div>
 
         <div class="path-grid">
           <a href="projects.html" class="path-card">
             <span>Projects</span>
-            <h3>Applications and builds</h3>
-            <p>See the projects I’ve created, the problems they solve, and the technologies behind them.</p>
+            <h3>Things I’ve built</h3>
+            <p>See the projects I’m working on, the ideas behind them, and the technologies used to create them.</p>
           </a>
 
           <a href="skills.html" class="path-card">
             <span>Skills</span>
-            <h3>Tools and technologies</h3>
-            <p>View the languages, frameworks, and technical areas I’m continuing to develop.</p>
+            <h3>Tools I’m developing</h3>
+            <p>Explore the languages, technologies, and development areas I’m continuing to strengthen.</p>
           </a>
 
           <a href="experience.html" class="path-card">
             <span>Experience</span>
-            <h3>Practical and professional growth</h3>
-            <p>Read more about the experiences that have shaped how I work, communicate, and learn.</p>
+            <h3>Growth through practice</h3>
+            <p>Learn more about the experiences that have shaped how I work, communicate, and develop professionally.</p>
           </a>
 
           <a href="education.html" class="path-card">
             <span>Education</span>
-            <h3>Academic background</h3>
-            <p>Learn more about my studies and how they support my path into software development.</p>
+            <h3>Academic journey</h3>
+            <p>Read about my studies and how they support my path into software development and tech.</p>
           </a>
         </div>
       </div>
@@ -870,7 +922,7 @@
           <div>
             <h2>Let’s connect.</h2>
             <p>
-              If you’re hiring for a junior, internship, or early-career software role, I’d love to hear from you.
+              If you’d like to connect on LinkedIn, discuss opportunities, or see the projects I’ll be adding to this portfolio, I’d love to hear from you.
             </p>
           </div>
 
@@ -886,19 +938,26 @@
   <footer>
     <div class="container">
       <div class="footer-row">
-        <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
-        <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <p>© 2026 Varisha Mohsin. Designed and developed as part of my personal portfolio.</p>
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/varisha-m-34b4a3297/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
       </div>
     </div>
   </footer>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add("show");
         }
       });
     }, { threshold: 0.15 });
