@@ -6,11 +6,14 @@
   <title>Projects | Varisha Mohsin</title>
   <meta
     name="description"
-    content="Explore software projects by Varisha Mohsin, including full stack, frontend, and educational applications built with a focus on usability and practical problem-solving."
+    content="Explore projects by Varisha Mohsin, including frontend, full-stack, and educational applications built with a focus on usability and problem-solving."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     * {
@@ -20,21 +23,18 @@
     }
 
     :root {
-      --bg: #f7f4ef;
-      --bg-soft: #efe8df;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --text: #171717;
-      --text-soft: #57534e;
-      --muted: #7c756e;
-      --line: rgba(120, 113, 108, 0.18);
+      --bg: #f8f5f1;
+      --surface: #ffffff;
+      --surface-soft: #f2ece6;
+      --text: #1f1a17;
+      --text-soft: #5f5751;
+      --muted: #8a8078;
+      --line: #e7ddd4;
       --accent: #7c5c46;
-      --accent-2: #a27d62;
-      --success-soft: rgba(124, 92, 70, 0.08);
-      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
-      --shadow-hover: 0 20px 52px rgba(25, 25, 25, 0.14);
-      --radius: 24px;
-      --max-width: 1180px;
+      --accent-dark: #684936;
+      --shadow: 0 10px 30px rgba(31, 26, 23, 0.08);
+      --radius: 22px;
+      --max-width: 1100px;
     }
 
     html {
@@ -42,175 +42,192 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
-        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #fcfbf9 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.03;
-      background-image:
-        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
-        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
-      background-size: 24px 24px, 28px 28px;
-      z-index: 0;
-    }
-
-    ::selection {
-      background: rgba(124, 92, 70, 0.18);
+      line-height: 1.7;
     }
 
     .container {
       width: min(var(--max-width), 92%);
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(247, 244, 239, 0.82);
+      background: rgba(248, 245, 241, 0.92);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-shell {
-      width: min(var(--max-width), 92%);
-      margin: 0 auto;
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .brand {
       text-decoration: none;
       color: var(--text);
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       line-height: 1.1;
     }
 
     .brand strong {
       font-size: 1rem;
-      letter-spacing: -0.02em;
     }
 
     .brand span {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 0.15rem;
+      margin-top: 0.2rem;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--text-soft);
       text-decoration: none;
-      font-size: 0.95rem;
+      color: var(--text-soft);
       font-weight: 600;
-      transition: 0.25s ease;
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.4rem;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.25s ease;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
     }
 
     nav a:hover,
     nav a.active {
-      color: var(--text);
-    }
-
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
+      color: var(--accent);
     }
 
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.15rem;
-      border-radius: 999px;
-      background: var(--text);
-      color: #fff;
       text-decoration: none;
-      font-size: 0.92rem;
+      background: var(--text);
+      color: white;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
       font-weight: 700;
-      transition: 0.3s ease;
-      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+      font-size: 0.92rem;
+      transition: 0.25s ease;
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
     }
 
-    /* PAGE HERO */
     .page-hero {
-      padding: 5.8rem 0 2.2rem;
+      padding: 5.5rem 0 2.5rem;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
+      background: var(--surface-soft);
+      color: var(--accent);
+      border: 1px solid var(--line);
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(124, 92, 70, 0.14);
-      color: var(--accent);
       font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      backdrop-filter: blur(10px);
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1,
+    .section-title,
+    .cta-card h2,
+    .project-title {
+      font-family: "Crimson Pro", serif;
+      letter-spacing: -0.03em;
+      line-height: 1;
     }
 
     .page-hero h1 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
       margin-bottom: 1rem;
-      max-width: 11ch;
+      max-width: 10ch;
     }
 
     .page-hero p {
-      max-width: 70ch;
       color: var(--text-soft);
-      font-size: 1.06rem;
+      max-width: 68ch;
+      font-size: 1.05rem;
     }
 
-    /* SUMMARY BAR */
-    .summary-bar {
-      padding-bottom: 2rem;
+    .section {
+      padding: 1rem 0 3rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-copy {
+      max-width: 65ch;
+      color: var(--text-soft);
+    }
+
+    .about-card,
+    .summary-card,
+    .project-card,
+    .cta-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card,
+    .summary-card,
+    .cta-card {
+      padding: 1.8rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .about-box {
+      background: #fcfaf8;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem;
+    }
+
+    .about-box h3 {
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
+    }
+
+    .about-box p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
     }
 
     .summary-card {
@@ -219,17 +236,11 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1rem 1.2rem;
-      box-shadow: var(--shadow);
     }
 
     .summary-card p {
       color: var(--text-soft);
-      max-width: 62ch;
-      font-size: 0.96rem;
+      max-width: 60ch;
     }
 
     .summary-pill {
@@ -238,48 +249,35 @@
       justify-content: center;
       padding: 0.7rem 1rem;
       border-radius: 999px;
-      background: var(--success-soft);
+      background: var(--surface-soft);
       color: var(--text);
+      border: 1px solid var(--line);
       font-size: 0.9rem;
       font-weight: 700;
       white-space: nowrap;
     }
 
-    /* PROJECTS */
-    .projects-section {
-      padding: 1rem 0 4rem;
-    }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
     .project-card {
-      background: rgba(255,255,255,0.76);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
       overflow: hidden;
-      transition: 0.32s ease;
+      transition: 0.25s ease;
       display: flex;
       flex-direction: column;
-      position: relative;
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(124, 92, 70, 0.28);
+      transform: translateY(-4px);
     }
 
     .project-top {
       padding: 1.5rem 1.5rem 1rem;
-      background:
-        linear-gradient(180deg, rgba(124, 92, 70, 0.06), transparent),
-        rgba(255,255,255,0.38);
-      border-bottom: 1px solid rgba(120, 113, 108, 0.08);
+      background: linear-gradient(180deg, rgba(124, 92, 70, 0.05), transparent);
+      border-bottom: 1px solid var(--line);
     }
 
     .project-meta {
@@ -296,48 +294,43 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: rgba(124, 92, 70, 0.08);
-      font-size: 1.25rem;
+      background: var(--surface-soft);
+      font-size: 1.2rem;
     }
 
     .project-type {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       padding: 0.45rem 0.75rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.7);
+      background: white;
       border: 1px solid var(--line);
       color: var(--accent);
       font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     .project-title {
-      font-family: 'Crimson Pro', serif;
-      font-size: 1.9rem;
-      line-height: 1.08;
-      margin-bottom: 0.6rem;
-      letter-spacing: -0.02em;
+      font-size: 1.8rem;
+      margin-bottom: 0.55rem;
     }
 
     .project-intro {
       color: var(--text-soft);
-      font-size: 0.98rem;
-      max-width: 58ch;
+      font-size: 0.97rem;
     }
 
     .project-body {
-      padding: 1.35rem 1.5rem 1.5rem;
+      padding: 1.3rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 1rem;
       flex: 1;
     }
 
     .project-section h3 {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--accent);
@@ -347,7 +340,7 @@
 
     .project-section p {
       color: var(--text-soft);
-      font-size: 0.97rem;
+      font-size: 0.96rem;
     }
 
     .tags {
@@ -359,19 +352,19 @@
     .tag {
       padding: 0.48rem 0.82rem;
       border-radius: 999px;
-      background: rgba(124, 92, 70, 0.08);
-      border: 1px solid rgba(124, 92, 70, 0.08);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
       color: var(--text);
       font-size: 0.84rem;
       font-weight: 700;
     }
 
-    .project-actions {
+    .project-actions,
+    .cta-actions {
       display: flex;
-      gap: 0.8rem;
+      gap: 0.85rem;
       flex-wrap: wrap;
       margin-top: auto;
-      padding-top: 0.2rem;
     }
 
     .btn-primary,
@@ -380,59 +373,43 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
+      text-decoration: none;
+      font-weight: 700;
       padding: 0.95rem 1.3rem;
       border-radius: 999px;
-      text-decoration: none;
-      font-size: 0.94rem;
-      font-weight: 700;
-      transition: 0.3s ease;
-      border: none;
-      cursor: pointer;
+      transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: var(--accent);
       color: white;
-      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+      box-shadow: 0 10px 24px rgba(124, 92, 70, 0.22);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+      background: var(--accent-dark);
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.7);
+      background: white;
       color: var(--text);
       border: 1px solid var(--line);
-      font-size: 0.85rem;
-      padding: 0.85rem 1.05rem;
     }
 
     .btn-secondary:hover {
-      transform: translateY(-3px);
-      border-color: rgba(124, 92, 70, 0.34);
+      transform: translateY(-2px);
+      border-color: #d8c8bb;
     }
 
     .btn-muted {
-      background: rgba(124, 92, 70, 0.08);
+      background: var(--surface-soft);
       color: var(--text-soft);
-      border: 1px solid rgba(124, 92, 70, 0.08);
+      border: 1px solid var(--line);
       cursor: default;
     }
 
-    /* CTA */
-    .cta-section {
-      padding: 0 0 5rem;
-    }
-
     .cta-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -441,24 +418,15 @@
     }
 
     .cta-card h2 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1;
-      margin-bottom: 0.6rem;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin-bottom: 0.5rem;
     }
 
     .cta-card p {
       color: var(--text-soft);
-      max-width: 58ch;
+      max-width: 56ch;
     }
 
-    .cta-actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    /* FOOTER */
     footer {
       padding: 2rem 0 2.5rem;
       color: var(--muted);
@@ -466,19 +434,24 @@
     }
 
     .footer-row {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .social-link {
       color: var(--text-soft);
       text-decoration: none;
       font-weight: 600;
-      transition: 0.25s ease;
     }
 
     .social-link:hover {
@@ -487,7 +460,7 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(24px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
@@ -496,7 +469,8 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
+      .about-grid,
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -504,36 +478,31 @@
 
     @media (max-width: 760px) {
       .nav-shell {
-        min-height: auto;
         padding: 1rem 0;
-        flex-direction: column;
         align-items: flex-start;
       }
 
       nav {
-        gap: 1rem;
+        width: 100%;
       }
 
-      .cta-card {
-        padding: 1.5rem;
+      .page-hero {
+        padding-top: 4.5rem;
       }
     }
 
     @media (max-width: 560px) {
-      nav {
-        width: 100%;
-      }
-
-      .nav-cta,
       .btn-primary,
       .btn-secondary,
-      .btn-muted {
+      .btn-muted,
+      .nav-cta {
         width: 100%;
       }
 
       .project-actions,
       .cta-actions {
         flex-direction: column;
+        width: 100%;
       }
 
       .page-hero h1 {
@@ -544,10 +513,10 @@
 </head>
 <body>
   <header>
-    <div class="nav-shell">
+    <div class="container nav-shell">
       <a href="index.html" class="brand">
         <strong>Varisha Mohsin</strong>
-        <span>Aspiring Software Developer</span>
+        <span>Aspiring Computer Scientist</span>
       </a>
 
       <nav>
@@ -565,47 +534,73 @@
   <main>
     <section class="page-hero">
       <div class="container reveal">
-        <div class="eyebrow">Portfolio Projects</div>
-        <h1>Projects that show how I build and think.</h1>
+        <div class="eyebrow">Projects</div>
+        <h1>Projects I’ve built</h1>
         <p>
-          These projects reflect my growth as a developer across frontend, backend, logic, and user experience.
-          I focus on building software that is practical, easy to use, and clearly structured, while strengthening
-          the core skills employers look for in junior developers.
+          These projects show how I’m developing across frontend, logic, and full-stack work. I like building things that are clear, useful, and practical.
         </p>
       </div>
     </section>
 
-    <section class="summary-bar">
+    <section class="section">
       <div class="container reveal">
-        <div class="summary-card">
-          <p>
-            From educational tools to productivity apps, each project helped me develop technical depth, problem-solving,
-            and a stronger understanding of how to turn an idea into a working product.
+        <div class="section-head">
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">What this page shows</h2>
+          <p class="section-copy">
+            This page brings together projects that helped me strengthen programming, interface design, and problem-solving. Each one reflects a different part of how I’m learning and improving.
           </p>
-          <div class="summary-pill">5 Selected Projects</div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="about-box">
+              <h3>What I focus on</h3>
+              <p>
+                I try to build projects that are simple to use, visually clear, and technically solid for my current level.
+              </p>
+            </div>
+
+            <div class="about-box">
+              <h3>What I’m improving</h3>
+              <p>
+                Through these projects, I’m building stronger confidence in JavaScript, application structure, and creating more polished user experiences.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="projects-section">
+    <section class="section">
+      <div class="container reveal">
+        <div class="summary-card">
+          <p>
+            A mix of frontend, educational, and practical projects built to improve both technical skill and real-world thinking.
+          </p>
+          <div class="summary-pill">5 projects</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="projects-grid">
-
           <article class="project-card reveal">
             <div class="project-top">
               <div class="project-meta">
                 <div class="project-icon">🧮</div>
-                <div class="project-type">Interactive JavaScript Project</div>
+                <div class="project-type">JavaScript Project</div>
               </div>
               <h2 class="project-title">Calculator</h2>
               <p class="project-intro">
-                A responsive scientific calculator project built to practice JavaScript logic, event handling, and clean UI structure.
+                A scientific calculator inspired by the style of the calculators used at A-Level.
               </p>
             </div>
 
             <div class="project-body">
               <div class="project-section">
-                <h3>What I used</h3>
+                <h3>Built with</h3>
                 <div class="tags">
                   <span class="tag">JavaScript</span>
                   <span class="tag">HTML</span>
@@ -614,15 +609,15 @@
               </div>
 
               <div class="project-section">
-                <h3>What it does</h3>
+                <h3>About the project</h3>
                 <p>
-                  A advanced calculator with working input logic and a clean layout, similar to the A level calculator we use.
+                  Built to practise input handling, calculation logic, and creating a cleaner, more realistic interface.
                 </p>
               </div>
 
               <div class="project-actions">
                 <a href="https://v4risha.github.io/PurpleCalc/" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo</a>
-                <a href="https://v4risha.github.io/PurpleCalc/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Click here</a>
+                <a href="https://v4risha.github.io/PurpleCalc/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Open Project</a>
               </div>
             </div>
           </article>
@@ -631,17 +626,17 @@
             <div class="project-top">
               <div class="project-meta">
                 <div class="project-icon">📚</div>
-                <div class="project-type">Full Stack Productivity App</div>
+                <div class="project-type">Full-Stack App</div>
               </div>
               <h2 class="project-title">Revision App</h2>
               <p class="project-intro">
-                A revision app made to help students organise study tasks and keep everything in one place.
+                A study app designed to keep revision tools and tasks in one place.
               </p>
             </div>
 
             <div class="project-body">
               <div class="project-section">
-                <h3>What I used</h3>
+                <h3>Built with</h3>
                 <div class="tags">
                   <span class="tag">Node.js</span>
                   <span class="tag">Express</span>
@@ -653,15 +648,15 @@
               </div>
 
               <div class="project-section">
-                <h3>What it does</h3>
+                <h3>About the project</h3>
                 <p>
-                  Helps users manage revision, notes, and study tasks in a more organised way, also includes additional features such as pomodoro timer, prayer times, make your own flashcards, goals, etc.
+                  Includes revision tools like notes, tasks, flashcards, goals, a Pomodoro timer, and prayer times in one organised app.
                 </p>
               </div>
 
               <div class="project-actions">
                 <a href="https://v4risha.github.io/revisionApp/" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo</a>
-                <a href="https://v4risha.github.io/revisionApp/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Click here</a>
+                <a href="https://v4risha.github.io/revisionApp/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Open Project</a>
               </div>
             </div>
           </article>
@@ -672,15 +667,15 @@
                 <div class="project-icon">✅</div>
                 <div class="project-type">Utility App</div>
               </div>
-              <h2 class="project-title">To-Do List Application</h2>
+              <h2 class="project-title">To-Do List</h2>
               <p class="project-intro">
-                A task management app built to organise daily tasks with a simple and easy-to-use layout.
+                A simple task manager built around clarity and everyday use.
               </p>
             </div>
 
             <div class="project-body">
               <div class="project-section">
-                <h3>What I used</h3>
+                <h3>Built with</h3>
                 <div class="tags">
                   <span class="tag">JavaScript</span>
                   <span class="tag">HTML</span>
@@ -690,15 +685,15 @@
               </div>
 
               <div class="project-section">
-                <h3>What it does</h3>
+                <h3>About the project</h3>
                 <p>
-                  Lets users add, manage, and save tasks directly in the browser, even when refreshed tasks stay!
+                  Lets users add and manage tasks with saved progress that stays in the browser after refresh.
                 </p>
               </div>
 
               <div class="project-actions">
                 <a href="https://v4risha.github.io/todolist/" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo</a>
-                <a href="https://v4risha.github.io/todolist/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Click here</a>
+                <a href="https://v4risha.github.io/todolist/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Open Project</a>
               </div>
             </div>
           </article>
@@ -707,7 +702,7 @@
             <div class="project-top">
               <div class="project-meta">
                 <div class="project-icon">🎯</div>
-                <div class="project-type">Educational Web App</div>
+                <div class="project-type">Educational App</div>
               </div>
               <h2 class="project-title">Physics Projectile Game</h2>
               <p class="project-intro">
@@ -717,7 +712,7 @@
 
             <div class="project-body">
               <div class="project-section">
-                <h3>What I used</h3>
+                <h3>Built with</h3>
                 <div class="tags">
                   <span class="tag">JavaScript</span>
                   <span class="tag">HTML</span>
@@ -727,9 +722,9 @@
               </div>
 
               <div class="project-section">
-                <h3>What it does</h3>
+                <h3>About the project</h3>
                 <p>
-                  Helps show projectile motion in a more interactive way.
+                  Built to present projectile motion in a more interactive way and connect learning with gameplay.
                 </p>
               </div>
 
@@ -743,7 +738,7 @@
             <div class="project-top">
               <div class="project-meta">
                 <div class="project-icon">🍲</div>
-                <div class="project-type">Frontend Web Project</div>
+                <div class="project-type">Frontend Project</div>
               </div>
               <h2 class="project-title">Cooking Website</h2>
               <p class="project-intro">
@@ -753,7 +748,7 @@
 
             <div class="project-body">
               <div class="project-section">
-                <h3>What I used</h3>
+                <h3>Built with</h3>
                 <div class="tags">
                   <span class="tag">HTML</span>
                   <span class="tag">CSS</span>
@@ -762,9 +757,9 @@
               </div>
 
               <div class="project-section">
-                <h3>What it does</h3>
+                <h3>About the project</h3>
                 <p>
-                  Displays recipes clearly with a simple front-end layout.
+                  Built to organise personal recipes in a way that feels simple, accessible, and visually clear.
                 </p>
               </div>
 
@@ -773,19 +768,17 @@
               </div>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="section">
       <div class="container reveal">
         <div class="cta-card">
           <div>
-            <h2>More work is on the way.</h2>
+            <h2>More projects are coming.</h2>
             <p>
-              I’m continuing to build projects that improve my technical depth and show stronger real-world thinking.
-              As I expand the portfolio, I’ll be adding live demos, GitHub links, and more detailed case studies.
+              I’m continuing to build new work that improves my technical depth and shows stronger real-world thinking as I grow.
             </p>
           </div>
 
@@ -801,22 +794,42 @@
   <footer>
     <div class="container">
       <div class="footer-row">
-        <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
-        <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <p>© 2025 Varisha Mohsin.</p>
+        <div class="footer-links">
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/in/varisha-m-34b4a3297/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            class="social-link"
+            href="https://github.com/v4risha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.15 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
     reveals.forEach((el) => observer.observe(el));
   </script>
