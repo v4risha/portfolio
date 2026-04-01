@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Varisha Mohsin | Aspiring Software Developer</title>
+  <title>Varisha Mohsin | Aspiring Computer Scientist</title>
   <meta
     name="description"
-    content="Varisha Mohsin is an aspiring software developer building clean, user-focused web projects with Python, JavaScript, HTML, CSS, and growing React skills."
+    content="Varisha Mohsin is an aspiring computer scientist with a strong interest in building useful, clean web applications."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     * {
@@ -20,20 +23,18 @@
     }
 
     :root {
-      --bg: #f7f4ef;
-      --bg-secondary: #efe8df;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: #ffffff;
-      --text: #171717;
-      --text-soft: #57534e;
-      --muted: #7c756e;
-      --line: rgba(120, 113, 108, 0.18);
+      --bg: #f8f5f1;
+      --surface: #ffffff;
+      --surface-soft: #f2ece6;
+      --text: #1f1a17;
+      --text-soft: #5f5751;
+      --muted: #8a8078;
+      --line: #e7ddd4;
       --accent: #7c5c46;
-      --accent-2: #a27d62;
-      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
-      --shadow-hover: 0 20px 50px rgba(25, 25, 25, 0.13);
-      --radius: 24px;
-      --max-width: 1180px;
+      --accent-dark: #684936;
+      --shadow: 0 10px 30px rgba(31, 26, 23, 0.08);
+      --radius: 22px;
+      --max-width: 1100px;
     }
 
     html {
@@ -41,197 +42,132 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 26%),
-        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
-        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #fcfbf9 0%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.03;
-      background-image:
-        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
-        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
-      background-size: 24px 24px, 28px 28px;
-      z-index: 0;
-    }
-
-    ::selection {
-      background: rgba(124, 92, 70, 0.18);
+      line-height: 1.7;
     }
 
     .container {
       width: min(var(--max-width), 92%);
       margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
 
-    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(247, 244, 239, 0.82);
+      background: rgba(248, 245, 241, 0.92);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-shell {
-      width: min(var(--max-width), 92%);
-      margin: 0 auto;
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .brand {
       text-decoration: none;
       color: var(--text);
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       line-height: 1.1;
     }
 
     .brand strong {
       font-size: 1rem;
-      letter-spacing: -0.02em;
     }
 
     .brand span {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 0.15rem;
+      margin-top: 0.2rem;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--text-soft);
       text-decoration: none;
-      font-size: 0.95rem;
+      color: var(--text-soft);
       font-weight: 600;
-      transition: 0.25s ease;
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.4rem;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.25s ease;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
     }
 
     nav a:hover {
-      color: var(--text);
-    }
-
-    nav a:hover::after {
-      width: 100%;
+      color: var(--accent);
     }
 
     .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.8rem 1.15rem;
-      border-radius: 999px;
-      background: var(--text);
-      color: #fff;
       text-decoration: none;
-      font-size: 0.92rem;
+      background: var(--text);
+      color: white;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
       font-weight: 700;
-      transition: 0.3s ease;
-      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+      font-size: 0.92rem;
+      transition: 0.25s ease;
     }
 
     .nav-cta:hover {
       transform: translateY(-2px);
     }
 
-    /* HERO */
     .hero {
-      padding: 6.5rem 0 4rem;
-      position: relative;
+      padding: 5.5rem 0 3rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 2rem;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      display: inline-block;
+      background: var(--surface-soft);
+      color: var(--accent);
+      border: 1px solid var(--line);
       padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(124, 92, 70, 0.14);
-      color: var(--accent);
       font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      backdrop-filter: blur(10px);
+      margin-bottom: 1.2rem;
     }
 
     .hero h1 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(3rem, 6.2vw, 5.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.2rem;
-      max-width: 11ch;
+      font-family: "Crimson Pro", serif;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
     }
 
-    .hero h1 .soft {
-      color: var(--muted);
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    .hero p {
       color: var(--text-soft);
+      font-size: 1.05rem;
       max-width: 62ch;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-description {
-      color: var(--text-soft);
-      font-size: 1rem;
-      max-width: 60ch;
-      margin-bottom: 2rem;
+      margin-bottom: 1.1rem;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 0.9rem;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
     }
 
     .btn-primary,
@@ -239,90 +175,41 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
-      padding: 1rem 1.35rem;
-      border-radius: 999px;
       text-decoration: none;
-      font-size: 0.95rem;
       font-weight: 700;
-      transition: 0.3s ease;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: var(--accent);
       color: white;
-      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+      box-shadow: 0 10px 24px rgba(124, 92, 70, 0.22);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+      background: var(--accent-dark);
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.65);
+      background: white;
       color: var(--text);
       border: 1px solid var(--line);
-      backdrop-filter: blur(10px);
     }
 
     .btn-secondary:hover {
-      transform: translateY(-3px);
-      border-color: rgba(124, 92, 70, 0.35);
+      transform: translateY(-2px);
+      border-color: #d8c8bb;
     }
 
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
-      max-width: 720px;
-    }
-
-    .metric {
-      background: rgba(255,255,255,0.64);
+    .hero-card {
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 1rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(25, 25, 25, 0.04);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .metric span {
-      color: var(--text-soft);
-      font-size: 0.9rem;
-    }
-
-    .hero-panel {
-      position: relative;
-    }
-
-    .profile-card,
-    .focus-card {
       border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid rgba(255,255,255,0.6);
-      backdrop-filter: blur(16px);
+      padding: 1.6rem;
       box-shadow: var(--shadow);
-    }
-
-    .profile-card {
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), transparent);
     }
 
     .profile-top {
@@ -333,50 +220,50 @@
     }
 
     .avatar {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #e6d8ca, #b99072);
-      color: var(--text);
       display: grid;
       place-items: center;
+      background: linear-gradient(135deg, #e8d8c8, #c59f7f);
       font-weight: 800;
-      font-size: 1.15rem;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+      font-size: 1.1rem;
+      color: var(--text);
     }
 
     .profile-top h2 {
-      font-size: 1.05rem;
-      margin-bottom: 0.2rem;
+      font-size: 1.08rem;
+      margin-bottom: 0.15rem;
     }
 
     .profile-top p {
       color: var(--text-soft);
       font-size: 0.92rem;
+      margin: 0;
     }
 
-    .profile-list {
+    .mini-list {
       display: grid;
       gap: 0.9rem;
       margin: 1rem 0 1.2rem;
     }
 
-    .profile-item {
-      padding: 0.95rem 1rem;
-      background: rgba(255,255,255,0.66);
+    .mini-item {
+      background: #fcfaf8;
       border: 1px solid var(--line);
       border-radius: 16px;
+      padding: 0.95rem 1rem;
     }
 
-    .profile-item strong {
+    .mini-item strong {
       display: block;
-      font-size: 0.92rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.94rem;
     }
 
-    .profile-item span {
+    .mini-item span {
       color: var(--text-soft);
-      font-size: 0.92rem;
+      font-size: 0.93rem;
     }
 
     .tag-row {
@@ -386,36 +273,20 @@
     }
 
     .tag {
-      padding: 0.5rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(124, 92, 70, 0.08);
+      background: var(--surface-soft);
       color: var(--accent);
+      border-radius: 999px;
+      padding: 0.5rem 0.8rem;
       font-size: 0.82rem;
       font-weight: 700;
     }
 
-    .focus-card {
-      margin-top: 1rem;
-      padding: 1.2rem 1.3rem;
-    }
-
-    .focus-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .focus-card p {
-      color: var(--text-soft);
-      font-size: 0.94rem;
-    }
-
-    /* VALUE SECTION */
     .section {
-      padding: 2.5rem 0;
+      padding: 2.8rem 0;
     }
 
     .section-head {
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .section-kicker {
@@ -424,66 +295,54 @@
       letter-spacing: 0.08em;
       font-size: 0.78rem;
       font-weight: 800;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .section-title {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-family: "Crimson Pro", serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
       line-height: 1.05;
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
     }
 
     .section-copy {
+      max-width: 65ch;
       color: var(--text-soft);
-      max-width: 62ch;
     }
 
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .value-card {
-      background: rgba(255,255,255,0.7);
+    .about-card,
+    .contact-card {
+      background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 1.5rem;
+      border-radius: var(--radius);
+      padding: 1.8rem;
       box-shadow: var(--shadow);
-      transition: 0.3s ease;
     }
 
-    .value-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.3rem;
     }
 
-    .value-card .number {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      align-items: center;
-      justify-content: center;
-      background: rgba(124, 92, 70, 0.08);
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 1rem;
+    .about-box {
+      background: #fcfaf8;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem;
     }
 
-    .value-card h3 {
-      margin-bottom: 0.65rem;
-      font-size: 1.08rem;
+    .about-box h3 {
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
     }
 
-    .value-card p {
+    .about-box p {
       color: var(--text-soft);
       font-size: 0.95rem;
     }
 
-    /* FEATURED PATHS */
     .path-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -491,69 +350,42 @@
     }
 
     .path-card {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 1.6rem;
       text-decoration: none;
       color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.4rem;
       box-shadow: var(--shadow);
-      transition: 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .path-card::after {
-      content: "→";
-      position: absolute;
-      right: 1.2rem;
-      top: 1rem;
-      font-size: 1.2rem;
-      color: var(--accent);
-      opacity: 0;
-      transform: translateX(-6px);
       transition: 0.25s ease;
     }
 
     .path-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(124, 92, 70, 0.28);
-    }
-
-    .path-card:hover::after {
-      opacity: 1;
-      transform: translateX(0);
+      transform: translateY(-4px);
+      border-color: #d8c8bb;
     }
 
     .path-card span {
       display: block;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
       color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
       font-weight: 800;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
     }
 
     .path-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.08rem;
     }
 
     .path-card p {
       color: var(--text-soft);
-      font-size: 0.95rem;
-      max-width: 42ch;
+      font-size: 0.94rem;
     }
 
-    /* CONTACT */
     .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -562,15 +394,15 @@
     }
 
     .contact-card h2 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-family: "Crimson Pro", serif;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin-bottom: 0.5rem;
       line-height: 1;
-      margin-bottom: 0.6rem;
     }
 
     .contact-card p {
       color: var(--text-soft);
-      max-width: 54ch;
+      max-width: 52ch;
     }
 
     .contact-actions {
@@ -579,7 +411,6 @@
       flex-wrap: wrap;
     }
 
-    /* FOOTER */
     footer {
       padding: 2rem 0 2.5rem;
       color: var(--muted);
@@ -587,29 +418,33 @@
     }
 
     .footer-row {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .social-link {
       color: var(--text-soft);
       text-decoration: none;
       font-weight: 600;
-      transition: 0.25s ease;
     }
 
     .social-link:hover {
       color: var(--accent);
     }
 
-    /* REVEAL */
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(24px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
@@ -618,57 +453,30 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 980px) {
+    @media (max-width: 900px) {
       .hero-grid,
-      .value-grid,
+      .about-grid,
       .path-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 5rem;
-      }
-
-      .hero-panel {
-        max-width: 720px;
       }
     }
 
     @media (max-width: 760px) {
       .nav-shell {
-        min-height: auto;
         padding: 1rem 0;
-        flex-direction: column;
         align-items: flex-start;
       }
 
       nav {
-        gap: 1rem;
+        width: 100%;
       }
 
-      .hero-metrics {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-card {
-        padding: 1.5rem;
+      .hero {
+        padding-top: 4.5rem;
       }
     }
 
     @media (max-width: 560px) {
-      .hero h1 {
-        max-width: none;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      .nav-cta {
-        width: 100%;
-      }
-
       .hero-actions,
       .contact-actions {
         flex-direction: column;
@@ -676,7 +484,8 @@
       }
 
       .btn-primary,
-      .btn-secondary {
+      .btn-secondary,
+      .nav-cta {
         width: 100%;
       }
     }
@@ -684,14 +493,15 @@
 </head>
 <body>
   <header>
-    <div class="nav-shell">
+    <div class="container nav-shell">
       <a href="#home" class="brand">
         <strong>Varisha Mohsin</strong>
-        <span>Aspiring Software Developer</span>
+        <span>Aspiring Computer Scientist</span>
       </a>
 
       <nav>
         <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="experience.html">Experience</a>
@@ -706,122 +516,89 @@
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-copy reveal">
-            <div class="eyebrow">Open to software opportunities</div>
+          <div class="reveal">
+            <div class="eyebrow">Welcome to my portfolio</div>
 
-            <h1>
-              I build <span class="soft">clean, useful</span> digital products with code.
-            </h1>
+            <h1>Hi, I’m Varisha.</h1>
 
-            <p class="hero-subtitle">
-              I’m Varisha Mohsin, an aspiring software developer with a strong interest in building practical, user-focused web applications. My current skills are in Python, JavaScript, HTML, and CSS, and I’m continuing to grow through projects while learning React and more advanced tools.
+            <p>
+              I’m an aspiring computer scientist with a strong interest in building useful, clean web applications. My current skills are in Python, JavaScript, HTML, and CSS, and I’m continuing to grow through projects while learning React and more advanced tools.
             </p>
 
-            <p class="hero-description">
-              I care about writing clear code, solving real problems, and creating products that feel polished and intuitive to use. As an early-career developer, I’m building my experience through practical projects that strengthen my technical skills, problem-solving, and confidence as I continue learning.
+            <p>
+              I enjoy creating work that feels clear, practical, and thoughtful. As I keep learning, I’m building projects that help me improve my technical skills, problem-solving, and confidence as a developer.
             </p>
 
             <div class="hero-actions">
               <a href="projects.html" class="btn-primary">View My Projects</a>
-              <a href="#contact" class="btn-secondary">Get In Touch</a>
-            </div>
-
-            <div class="hero-metrics">
-              <div class="metric">
-                <strong>Web Development Focus</strong>
-                <span>Frontend development, programming fundamentals, and user-centred thinking</span>
-              </div>
-              <div class="metric">
-                <strong>Project Driven</strong>
-                <span>Building practical apps to strengthen real-world skills</span>
-              </div>
-              <div class="metric">
-                <strong>Career Ready</strong>
-                <span>Seeking opportunities to contribute and keep learning</span>
-              </div>
+              <a href="#about" class="btn-secondary">About Me</a>
             </div>
           </div>
 
-          <div class="hero-panel reveal">
-            <div class="profile-card">
-              <div class="profile-top">
-                <div class="avatar">VM</div>
-                <div>
-                  <h2>Varisha Mohsin</h2>
-                  <p>Aspiring Software Developer</p>
-                </div>
-              </div>
-
-              <div class="profile-list">
-                <div class="profile-item">
-                  <strong>What I bring</strong>
-                  <span>Strong foundations in programming and web development, clear communication, and a genuine focus on building useful products.</span>
-                </div>
-
-                <div class="profile-item">
-                  <strong>What I’m aiming for</strong>
-                  <span>Junior developer, internship, and early-career opportunities where I can contribute, learn fast, and grow with a team.</span>
-                </div>
-
-                <div class="profile-item">
-                  <strong>What matters to me</strong>
-                  <span>Readable code, thoughtful UX, continuous improvement, and real impact.</span>
-                </div>
-              </div>
-
-              <div class="tag-row">
-                <div class="tag">Python</div>
-                <div class="tag">JavaScript</div>
-                <div class="tag">HTML & CSS</div>
-                <div class="tag">Learning React</div>
+          <div class="hero-card reveal">
+            <div class="profile-top">
+              <div class="avatar">VM</div>
+              <div>
+                <h2>Varisha Mohsin</h2>
+                <p>Aspiring Computer Scientist</p>
               </div>
             </div>
 
-            <div class="focus-card">
-              <h3>Current focus</h3>
-              <p>
-                Building stronger portfolio projects, improving my front-end and programming skills, and continuing to learn React and more advanced development tools.
-              </p>
+            <div class="mini-list">
+              <div class="mini-item">
+                <strong>Current focus</strong>
+                <span>Building stronger projects and improving my front-end development skills.</span>
+              </div>
+
+              <div class="mini-item">
+                <strong>What I’m learning</strong>
+                <span>React, deeper JavaScript concepts, and more advanced development tools.</span>
+              </div>
+
+              <div class="mini-item">
+                <strong>What matters to me</strong>
+                <span>Readable code, useful design, continuous learning, and building things with purpose.</span>
+              </div>
+            </div>
+
+            <div class="tag-row">
+              <div class="tag">Python</div>
+              <div class="tag">JavaScript</div>
+              <div class="tag">HTML</div>
+              <div class="tag">CSS</div>
+              <div class="tag">Learning React</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section reveal" id="about">
       <div class="container">
         <div class="section-head">
-          <div class="section-kicker">Why this portfolio</div>
-          <h2 class="section-title">A homepage that speaks to employers, not just visitors.</h2>
+          <div class="section-kicker">About me</div>
+          <h2 class="section-title">A little more about who I am</h2>
           <p class="section-copy">
-            This portfolio is designed to show not only what I’ve built, but how I think: with clarity, structure, curiosity, and a strong willingness to learn and contribute.
+            I’m someone who enjoys learning, creating, and improving through practice. I like turning ideas into simple, useful digital experiences and growing my skills step by step through real projects.
           </p>
         </div>
 
-        <div class="value-grid">
-          <article class="value-card">
-            <div class="number">01</div>
-            <h3>Technical foundation</h3>
-            <p>
-              I’m building strong foundations in programming and web development, and applying them through hands-on projects rather than theory alone.
-            </p>
-          </article>
+        <div class="about-card">
+          <p class="section-copy">
+            I’m especially interested in web development because it combines creativity, logic, and problem-solving. I like building projects that not only work well, but also feel clean and easy to use. Right now, I’m focused on strengthening my foundations, learning more advanced tools, and becoming a developer who can make a meaningful contribution to a team.
+          </p>
 
-          <article class="value-card">
-            <div class="number">02</div>
-            <h3>Thoughtful product mindset</h3>
-            <p>
-              I care about more than just making something work. I want applications to feel intuitive, useful, and well put together.
-            </p>
-          </article>
+          <div class="about-grid">
+            <div class="about-box">
+              <h3>How I work</h3>
+              <p>I like to keep things clear, organised, and thoughtful. I enjoy learning by building and improving as I go.</p>
+            </div>
 
-          <article class="value-card">
-            <div class="number">03</div>
-            <h3>Growth and potential</h3>
-            <p>
-              I’m at the stage where I’m eager to learn quickly, take feedback seriously, and turn opportunity into strong professional growth.
-            </p>
-          </article>
+            <div class="about-box">
+              <h3>What I’m aiming for</h3>
+              <p>I’m working towards junior, internship, and early-career opportunities where I can learn, contribute, and keep growing.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -830,35 +607,35 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Explore</div>
-          <h2 class="section-title">See the work behind the homepage.</h2>
+          <h2 class="section-title">See more of my portfolio</h2>
           <p class="section-copy">
-            Explore the rest of my portfolio to learn more about my projects, experience, technical skills, and academic background.
+            You can explore my projects, skills, experience, and education to learn more about my journey and the work I’m building.
           </p>
         </div>
 
         <div class="path-grid">
           <a href="projects.html" class="path-card">
             <span>Projects</span>
-            <h3>Applications and builds</h3>
-            <p>See the projects I’ve created, the problems they solve, and the technologies behind them.</p>
+            <h3>My work and builds</h3>
+            <p>Take a look at the projects I’ve created and the technologies I’ve used.</p>
           </a>
 
           <a href="skills.html" class="path-card">
             <span>Skills</span>
-            <h3>Tools and technologies</h3>
-            <p>View the languages, frameworks, and technical areas I’m continuing to develop.</p>
+            <h3>Tools I’m developing</h3>
+            <p>See the languages, frameworks, and technical skills I’m continuing to grow.</p>
           </a>
 
           <a href="experience.html" class="path-card">
             <span>Experience</span>
-            <h3>Practical and professional growth</h3>
-            <p>Read more about the experiences that have shaped how I work, communicate, and learn.</p>
+            <h3>How I’m growing</h3>
+            <p>Read more about the experiences that have helped shape how I work and learn.</p>
           </a>
 
           <a href="education.html" class="path-card">
             <span>Education</span>
-            <h3>Academic background</h3>
-            <p>Learn more about my studies and how they support my path into software development.</p>
+            <h3>My academic background</h3>
+            <p>Learn more about my studies and how they support my path into tech.</p>
           </a>
         </div>
       </div>
@@ -870,13 +647,28 @@
           <div>
             <h2>Let’s connect.</h2>
             <p>
-              If you’re hiring for a junior, internship, or early-career software role, I’d love to hear from you.
+              If you’d like to get in touch about opportunities, projects, or just to connect, feel free to reach out.
             </p>
           </div>
 
           <div class="contact-actions">
             <a href="mailto:varisha.mohsin@hotmail.co.uk" class="btn-primary">Email Me</a>
-            <a href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/varisha-m-34b4a3297/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/v4risha"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -887,23 +679,43 @@
     <div class="container">
       <div class="footer-row">
         <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
-        <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="footer-links">
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/in/varisha-m-34b4a3297/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            class="social-link"
+            href="https://github.com/v4risha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.15 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
     reveals.forEach((el) => observer.observe(el));
   </script>
 </body>
-</html
+</html>
