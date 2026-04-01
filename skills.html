@@ -4,268 +4,910 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills | Varisha Mohsin</title>
-
+  <meta
+    name="description"
+    content="Technical skills, tools, and strengths of Varisha Mohsin across programming, web development, and software workflow."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --bg: #f7f4ef;
       --bg-soft: #efe8df;
       --surface: rgba(255,255,255,0.78);
+      --surface-strong: #ffffff;
       --text: #171717;
       --text-soft: #57534e;
       --muted: #7c756e;
-      --line: rgba(120,113,108,0.18);
+      --line: rgba(120, 113, 108, 0.18);
       --accent: #7c5c46;
       --accent-2: #a27d62;
-      --shadow: 0 12px 40px rgba(0,0,0,0.08);
-      --shadow-hover: 0 20px 52px rgba(0,0,0,0.14);
+      --shadow: 0 12px 40px rgba(25, 25, 25, 0.08);
+      --shadow-hover: 0 20px 52px rgba(25, 25, 25, 0.14);
+      --radius: 24px;
       --max-width: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg,#fcfbf8 0%,var(--bg)100%);
+      background:
+        radial-gradient(circle at top left, rgba(162, 125, 98, 0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(124, 92, 70, 0.08), transparent 24%),
+        linear-gradient(180deg, #fcfbf8 0%, var(--bg) 100%);
       color: var(--text);
       line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image:
+        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 0.7px),
+        radial-gradient(circle at 70% 80%, #000 0.5px, transparent 0.7px);
+      background-size: 24px 24px, 28px 28px;
+      z-index: 0;
+    }
+
+    ::selection {
+      background: rgba(124, 92, 70, 0.18);
     }
 
     .container {
-      width: min(var(--max-width),92%);
+      width: min(var(--max-width), 92%);
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     header {
       position: sticky;
       top: 0;
-      backdrop-filter: blur(12px);
-      background: rgba(247,244,239,0.85);
-      border-bottom: 1px solid var(--line);
       z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(247, 244, 239, 0.82);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-shell {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      min-height:75px;
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
     .brand {
-      text-decoration:none;
-      color:var(--text);
+      text-decoration: none;
+      color: var(--text);
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
     }
 
     nav {
-      display:flex;
-      gap:1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     nav a {
-      text-decoration:none;
-      color:var(--text-soft);
-      font-weight:600;
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: 0.25s ease;
+      position: relative;
     }
 
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.4rem;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover,
     nav a.active {
-      color:var(--text);
+      color: var(--text);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
     }
 
     .nav-cta {
-      background:var(--text);
-      color:#fff;
-      padding:0.7rem 1rem;
-      border-radius:999px;
-      text-decoration:none;
-      font-size:0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 1.15rem;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: 0 10px 26px rgba(23, 23, 23, 0.16);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
     }
 
     .page-hero {
-      padding:5.5rem 0 2rem;
+      padding: 5.8rem 0 2.2rem;
     }
 
-    h1 {
-      font-family:'Crimson Pro',serif;
-      font-size:clamp(2.8rem,6vw,4.5rem);
-      margin-bottom:1rem;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(124, 92, 70, 0.14);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(10px);
     }
 
-    p {
-      color:var(--text-soft);
-      max-width:650px;
+    .page-hero h1 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      max-width: 11ch;
     }
 
-    .about-card,
-    .skill-card,
-    .summary-card {
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
+    .page-hero p {
+      max-width: 72ch;
+      color: var(--text-soft);
+      font-size: 1.06rem;
     }
 
+    .summary-section,
+    .about-section {
+      padding-bottom: 2rem;
+    }
+
+    .summary-card,
     .about-card {
-      padding:1.5rem;
-      margin-top:1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-item,
+    .about-item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(120, 113, 108, 0.08);
+    }
+
+    .summary-item strong,
+    .about-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .summary-item span,
+    .about-item span {
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .skills-section {
+      padding: 1rem 0 4rem;
+    }
+
+    .section-block {
+      margin-bottom: 3rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.4rem;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      color: var(--text-soft);
+      max-width: 68ch;
     }
 
     .skills-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1rem;
-      margin-top:2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
     }
 
     .skill-card {
-      padding:1.2rem;
-      transition:0.3s;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      transition: 0.32s ease;
     }
 
     .skill-card:hover {
-      transform:translateY(-6px);
-      box-shadow:var(--shadow-hover);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(124, 92, 70, 0.28);
     }
 
-    .skill-card h3 {
-      margin-bottom:0.3rem;
+    .skill-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
     }
 
-    .summary-card {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1rem;
-      padding:1.2rem;
-      margin-top:1.5rem;
+    .skill-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(124, 92, 70, 0.08);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .skill-top h3 {
+      font-size: 1.1rem;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .skill-level {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .skill-card p {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill-tag {
+      padding: 0.48rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 70, 0.08);
+      border: 1px solid rgba(124, 92, 70, 0.08);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tools-section {
+      padding: 0 0 4rem;
+    }
+
+    .tools-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.65));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    .tools-card h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      margin-bottom: 0.7rem;
+    }
+
+    .tools-card p {
+      color: var(--text-soft);
+      max-width: 64ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tool-badge {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 70, 0.08);
+      color: var(--text);
+      border: 1px solid rgba(124, 92, 70, 0.08);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .tool-badge:hover {
+      transform: translateY(-2px);
+      background: rgba(124, 92, 70, 0.14);
+    }
+
+    .cta-section {
+      padding: 0 0 5rem;
+    }
+
+    .cta-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-card h2 {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-card p {
+      color: var(--text-soft);
+      max-width: 58ch;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 14px 34px rgba(124, 92, 70, 0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(124, 92, 70, 0.34);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124, 92, 70, 0.34);
     }
 
     footer {
-      margin-top:3rem;
-      padding:2rem 0;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:0.9rem;
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    @media(max-width:900px){
-      .skills-grid,.summary-card{
-        grid-template-columns:1fr;
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .summary-card,
+      .about-card,
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
     }
 
+    @media (max-width: 760px) {
+      .nav-shell {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+
+      .tools-card,
+      .cta-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        width: 100%;
+      }
+
+      .nav-cta,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .page-hero h1 {
+        max-width: none;
+      }
+    }
   </style>
 </head>
-
 <body>
+  <header>
+    <div class="nav-shell">
+      <a href="index.html" class="brand">
+        <strong>Varisha Mohsin</strong>
+        <span>Aspiring Computer Scientist</span>
+      </a>
 
-<header>
-  <div class="container nav-shell">
-    <div class="brand"><strong>Varisha Mohsin</strong></div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+      </nav>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html" class="active">Skills</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-    </nav>
+      <a class="nav-cta" href="index.html#contact">Contact Me</a>
+    </div>
+  </header>
 
-    <a class="nav-cta" href="index.html#contact">Contact</a>
-  </div>
-</header>
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="eyebrow">Skills</div>
+        <h1>Skills that support how I build.</h1>
+        <p>
+          This page gives an overview of the technical areas I’ve been developing through education,
+          independent learning, and practical projects. My focus is on building strong foundations
+          and improving through real work.
+        </p>
+      </div>
+    </section>
 
-<main>
+    <section class="about-section">
+      <div class="container reveal">
+        <div class="about-card">
+          <div class="about-item">
+            <strong>About me</strong>
+            <span>I learn best by building projects, solving problems step by step, and improving through practice.</span>
+          </div>
+          <div class="about-item">
+            <strong>What I focus on</strong>
+            <span>Clear code, useful products, and understanding how things work properly rather than rushing through them.</span>
+          </div>
+          <div class="about-item">
+            <strong>What I’m improving</strong>
+            <span>Programming confidence, frontend development, and stronger overall technical depth as I keep building.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="page-hero">
+    <section class="summary-section">
+      <div class="container reveal">
+        <div class="summary-card">
+          <div class="summary-item">
+            <strong>Programming foundation</strong>
+            <span>Built through projects, coursework, and regular practice.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Frontend focus</strong>
+            <span>Strong interest in clean design, layout, and usability.</span>
+          </div>
+          <div class="summary-item">
+            <strong>Practical growth</strong>
+            <span>Improving through real projects and hands-on learning.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section">
+      <div class="container">
+
+        <section class="section-block reveal">
+          <div class="section-head">
+            <div class="section-kicker">Languages</div>
+            <h2 class="section-title">Programming languages</h2>
+            <p class="section-copy">
+              Languages I’ve used across education, independent learning, and project work.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🐍</div>
+                <div>
+                  <h3>Python</h3>
+                  <div class="skill-level">Strong</div>
+                </div>
+              </div>
+              <p>
+                I’m confident using Python for structured programming, logic, and problem-solving. It has been one of the main ways I’ve strengthened my core programming skills.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Logic</span>
+                <span class="skill-tag">Problem solving</span>
+                <span class="skill-tag">Structured programming</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">📜</div>
+                <div>
+                  <h3>JavaScript</h3>
+                  <div class="skill-level">Growing</div>
+                </div>
+              </div>
+              <p>
+                I use JavaScript to add interactivity and functionality to websites and apps. It has helped me build stronger frontend logic and more dynamic user experiences.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">DOM</span>
+                <span class="skill-tag">Events</span>
+                <span class="skill-tag">Interactivity</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🗃️</div>
+                <div>
+                  <h3>SQL</h3>
+                  <div class="skill-level">Foundation</div>
+                </div>
+              </div>
+              <p>
+                I have a basic understanding of SQL and relational databases, including simple queries and working with stored data in more structured projects.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Queries</span>
+                <span class="skill-tag">Tables</span>
+                <span class="skill-tag">Relational data</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block reveal">
+          <div class="section-head">
+            <div class="section-kicker">Development</div>
+            <h2 class="section-title">Web development</h2>
+            <p class="section-copy">
+              The main areas I’m using while building websites and interactive projects.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🌐</div>
+                <div>
+                  <h3>HTML & CSS</h3>
+                  <div class="skill-level">Strong</div>
+                </div>
+              </div>
+              <p>
+                I’m confident using HTML and CSS to build responsive pages, structure content clearly, and create interfaces that feel polished and easy to use.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Responsive design</span>
+                <span class="skill-tag">Layout</span>
+                <span class="skill-tag">Styling</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">⚛️</div>
+                <div>
+                  <h3>Frontend development</h3>
+                  <div class="skill-level">Developing</div>
+                </div>
+              </div>
+              <p>
+                I’m continuing to improve how I structure interfaces, organise code, and build frontend work that feels more consistent and professional.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Structure</span>
+                <span class="skill-tag">UI</span>
+                <span class="skill-tag">User experience</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🎨</div>
+                <div>
+                  <h3>UI / UX awareness</h3>
+                  <div class="skill-level">Good understanding</div>
+                </div>
+              </div>
+              <p>
+                I pay attention to clarity, spacing, layout, and ease of use. I want what I build to not only work well, but also feel simple and thoughtful.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Usability</span>
+                <span class="skill-tag">Visual clarity</span>
+                <span class="skill-tag">Design thinking</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block reveal">
+          <div class="section-head">
+            <div class="section-kicker">Core strengths</div>
+            <h2 class="section-title">Software fundamentals</h2>
+            <p class="section-copy">
+              Broader strengths that shape how I approach technical work.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🧩</div>
+                <div>
+                  <h3>Problem solving</h3>
+                  <div class="skill-level">Strong</div>
+                </div>
+              </div>
+              <p>
+                I approach problems by breaking them into smaller steps and working through them logically. This helps me when debugging, learning, and building features.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Debugging</span>
+                <span class="skill-tag">Analysis</span>
+                <span class="skill-tag">Structured thinking</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">💾</div>
+                <div>
+                  <h3>Database understanding</h3>
+                  <div class="skill-level">Practical</div>
+                </div>
+              </div>
+              <p>
+                I understand basic database ideas including storage, tables, and relationships, which has supported some of the more structured projects I’ve worked on.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Storage</span>
+                <span class="skill-tag">Data structure</span>
+                <span class="skill-tag">Relational systems</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <div class="skill-top">
+                <div class="skill-icon">🔧</div>
+                <div>
+                  <h3>Version control</h3>
+                  <div class="skill-level">Working knowledge</div>
+                </div>
+              </div>
+              <p>
+                I use Git and GitHub to manage code, track changes, and improve how I work on projects. It’s an important part of building better development habits.
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Workflow</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="tools-section">
+      <div class="container reveal">
+        <div class="tools-card">
+          <h2>Tools & technologies</h2>
+          <p>
+            Tools and environments I’ve used while learning, building projects, and improving my workflow.
+          </p>
+
+          <div class="tools-grid">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">JavaScript</span>
+            <span class="tool-badge">HTML</span>
+            <span class="tool-badge">CSS</span>
+            <span class="tool-badge">SQL</span>
+            <span class="tool-badge">Git</span>
+            <span class="tool-badge">GitHub</span>
+            <span class="tool-badge">VS Code</span>
+            <span class="tool-badge">Chrome DevTools</span>
+            <span class="tool-badge">SQLite</span>
+            <span class="tool-badge">Node.js</span>
+            <span class="tool-badge">Express</span>
+            <span class="tool-badge">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container reveal">
+        <div class="cta-card">
+          <div>
+            <h2>See how I use these skills.</h2>
+            <p>
+              My projects show how I’ve been applying these technical areas through practical builds, problem-solving, and continuous learning.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="projects.html" class="btn-primary">View Projects</a>
+            <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="container">
-      <h1>Skills</h1>
-      <p>
-        A focused overview of the technical skills I’m developing through projects,
-        independent learning, and consistent practice.
-      </p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="container">
-    <div class="about-card">
-      <h2 style="margin-bottom:0.5rem;">About me</h2>
-      <p>
-        I’m an aspiring software developer focused on building real projects and improving through practice.
-        I enjoy solving problems, writing clean code, and creating software that feels simple and useful.
-      </p>
-    </div>
-  </section>
-
-  <!-- SUMMARY -->
-  <section class="container">
-    <div class="summary-card">
-      <div>
-        <strong>Programming</strong>
-        <p>Strong foundations built through consistent coding and projects.</p>
-      </div>
-      <div>
-        <strong>Frontend</strong>
-        <p>Focused on clean UI, structure, and responsive design.</p>
-      </div>
-      <div>
-        <strong>Growth</strong>
-        <p>Continuously improving through real-world builds.</p>
+      <div class="footer-row">
+        <p>© 2025 Varisha Mohsin.</p>
+        <div class="footer-links">
+          <a class="social-link" href="https://www.linkedin.com/in/varisha-m-34b4a3297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="social-link" href="https://github.com/v4risha" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- SKILLS -->
-  <section class="container">
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
 
-    <div class="skills-grid">
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
 
-      <div class="skill-card">
-        <h3>Python</h3>
-        <p>Strong problem-solving and structured programming.</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>JavaScript</h3>
-        <p>Used for interactivity and frontend logic.</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>HTML & CSS</h3>
-        <p>Confident building responsive and clean interfaces.</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>SQL</h3>
-        <p>Basic database understanding and queries.</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Problem Solving</h3>
-        <p>Logical thinking and debugging approach.</p>
-      </div>
-
-      <div class="skill-card">
-        <h3>Git & GitHub</h3>
-        <p>Version control and workflow management.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-<footer>
-  <div class="container">
-    © 2025 Varisha Mohsin
-  </div>
-</footer>
-
+    reveals.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
