@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Varisha Mohsin</title>
+  <meta
+    name="description"
+    content="Learn more about Varisha Mohsin, including her background, personality, interests, and goals in technology."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f8f5f1;
+      --surface: #ffffff;
+      --surface-soft: #f2ece6;
+      --text: #1f1a17;
+      --text-soft: #5f5751;
+      --muted: #8a8078;
+      --line: #e7ddd4;
+      --accent: #7c5c46;
+      --accent-dark: #684936;
+      --shadow: 0 10px 30px rgba(31, 26, 23, 0.08);
+      --radius: 22px;
+      --max-width: 1100px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(180deg, #fcfbf9 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(var(--max-width), 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248, 245, 241, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-shell {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1rem;
+    }
+
+    .brand span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      text-decoration: none;
+      background: var(--text);
+      color: white;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .page-hero {
+      padding: 5.5rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .hero-copy,
+    .hero-photo {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 2rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--surface-soft);
+      color: var(--accent);
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .page-hero h1,
+    .section-title,
+    .cta-card h2 {
+      font-family: "Crimson Pro", serif;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      margin-bottom: 1rem;
+      max-width: 10ch;
+    }
+
+    .page-hero p {
+      color: var(--text-soft);
+      max-width: 62ch;
+      font-size: 1.05rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.3rem;
+    }
+
+    .highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.62rem 0.9rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: var(--text);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .hero-photo {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 320px;
+      justify-self: end;
+    }
+
+    .photo-frame {
+      min-height: 300px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #efe7df;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+
+    .photo-caption {
+      color: var(--muted);
+      font-size: 0.86rem;
+      padding: 0 0.15rem;
+    }
+
+    .section {
+      padding: 1rem 0 3rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-copy {
+      max-width: 65ch;
+      color: var(--text-soft);
+    }
+
+    .about-card,
+    .traits-card,
+    .grid-card,
+    .cta-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card,
+    .traits-card,
+    .cta-card {
+      padding: 1.8rem;
+    }
+
+    .about-grid,
+    .info-grid,
+    .traits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .about-box,
+    .grid-card,
+    .trait-box {
+      background: #fcfaf8;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem;
+    }
+
+    .about-box h3,
+    .grid-card h3,
+    .trait-box h3 {
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
+    }
+
+    .about-box p,
+    .grid-card p,
+    .trait-box p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    .pill {
+      padding: 0.48rem 0.82rem;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .traits-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .cta-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-card h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-card p {
+      color: var(--text-soft);
+      max-width: 56ch;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.95rem 1.3rem;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 10px 24px rgba(124, 92, 70, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: #d8c8bb;
+    }
+
+    footer {
+      padding: 2rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      border-top: 1px solid var(--line);
+      padding-top: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .about-grid,
+      .info-grid,
+      .traits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero h1 {
+        max-width: none;
+      }
+
+      .hero-photo {
+        max-width: 360px;
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-shell {
+        padding: 1rem 0;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .page-hero {
+        padding-top: 4.5rem;
+      }
+
+      .photo-frame {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .btn-primary,
+      .btn-secondary,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-photo {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-shell">
+      <a href="index.html" class="brand">
+        <strong>Varisha Mohsin</strong>
+        <span>Aspiring Computer Scientist</span>
+      </a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html" class="active">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+      </nav>
+
+      <a class="nav-cta" href="index.html#contact">Contact Me</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container reveal">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">About Me</div>
+            <h1>More about me as a person!</h1>
+            <p>
+              I’m a student with a growing interest in technology and computers and building
+              things that are both useful and well-designed. Alongside learning technical skills,
+              I also care about creativity, personal growth, and bringing personality
+              into the work I do.
+            </p>
+
+            <div class="hero-highlights">
+            </div>
+          </div>
+
+          <div class="hero-photo">
+            <div class="photo-frame">
+              <img src="me.jpg" alt="Portrait of Varisha Mohsin" />
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Introduction</div>
+          <h2 class="section-title">Who I am</h2>
+          <p class="section-copy">
+           I’m a student who enjoys learning across different areas, from technology to creativity, and I like building things that feel both useful and thoughtfully designed.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="about-box">
+              <h3>What I’m like as a person</h3>
+              <p>
+                I’d describe myself as bubbly, hardworking, and curious. I like being creative,
+                staying organised, and pushing myself to improve. I also love meeting new people and keeping the people around me happy!
+              </p>
+            </div>
+
+            <div class="about-box">
+              <h3>What motivates me</h3>
+              <p>
+                I enjoy seeing progress over time, especially when a project starts as a small idea
+                and develops into something more complete, useful, and well put together.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <section class="section">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Interests</div>
+          <h2 class="section-title">Hobbies and personal interests</h2>
+          <p class="section-copy">
+            This section helps show more of my personality beyond coding and coursework.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="grid-card">
+            <h3>Things I enjoy</h3>
+            <p>
+              Outside of tech, I enjoy activities that help me stay active, creative, and balanced. These interests are a big part of what keeps me motivated and grounded.
+            </p>
+            <div class="list">
+              <span class="pill">Working out</span>
+              <span class="pill">Pilates</span>
+              <span class="pill">Hiking</span>
+              <span class="pill">Baking</span>
+              <span class="pill">Reading</span>
+              <span class="pill">Gaming</span>
+            </div>
+          </div>
+
+          <div class="grid-card">
+            <h3>What matters to me outside work</h3>
+            <p>
+              I also really enjoy working with children and being involved in things that feel meaningful, supportive, and people-focused. I like having interests that make me a more rounded and thoughtful person.
+            </p>
+            <div class="list">
+              <span class="pill">Working with children</span>
+              <span class="pill">Personal growth</span>
+              <span class="pill">Balance</span>
+              <span class="pill">Reflection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="section-head">
+          <div class="section-kicker">Personality</div>
+          <h2 class="section-title">How I work and think</h2>
+          <p class="section-copy">
+            The way I approach projects says a lot about me: I like structure, clarity, and improving details until something feels right.
+          </p>
+        </div>
+
+        <div class="traits-card">
+          <div class="quote-box">
+            I enjoy combining technical thinking with creativity, and I’m always trying to build things that feel both useful and thoughtful.
+          </div>
+
+          <div class="traits-grid">
+            <div class="trait-box">
+              <h3>🌿 Calm and thoughtful</h3>
+              <p>
+                I like approaching things carefully and with purpose. Whether I’m solving a bug or designing a page, I prefer to think things through properly.
+              </p>
+            </div>
+
+            <div class="trait-box">
+              <h3>📚 Curious and always learning</h3>
+              <p>
+                I genuinely enjoy learning new ideas and improving my understanding step by step. I like progress that feels real and earned.
+              </p>
+            </div>
+
+            <div class="trait-box">
+              <h3>🎯 Organised and detail-focused</h3>
+              <p>
+                I pay attention to structure, neatness, and how everything fits together. I like work that feels clean, intentional, and well presented.
+              </p>
+            </div>
+
+            <div class="trait-box">
+              <h3>✨ Creative but practical</h3>
+              <p>
+                I enjoy expressing personality in my work, but I also care about making things useful, clear, and easy to understand.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reveal">
+        <div class="cta-card">
+          <div>
+            <h2>Want to see my work too?</h2>
+            <p>
+              This page gives a better sense of who I am, while my projects and skills pages show how I’m applying that mindset in practical work.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="projects.html" class="btn-primary">View Projects</a>
+            <a href="skills.html" class="btn-secondary">See Skills</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <p>© 2025 Varisha Mohsin.</p>
+        <div class="footer-links">
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/in/varisha-m-34b4a3297/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            class="social-link"
+            href="https://github.com/v4risha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
