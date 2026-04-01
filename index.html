@@ -310,37 +310,17 @@
       color: var(--text-soft);
     }
 
-    .about-card,
     .contact-card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 1.8rem;
       box-shadow: var(--shadow);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.3rem;
-    }
-
-    .about-box {
-      background: #fcfaf8;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 1.2rem;
-    }
-
-    .about-box h3 {
-      margin-bottom: 0.45rem;
-      font-size: 1rem;
-    }
-
-    .about-box p {
-      color: var(--text-soft);
-      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .path-grid {
@@ -383,14 +363,6 @@
     .path-card p {
       color: var(--text-soft);
       font-size: 0.94rem;
-    }
-
-    .contact-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
     }
 
     .contact-card h2 {
@@ -455,7 +427,6 @@
 
     @media (max-width: 900px) {
       .hero-grid,
-      .about-grid,
       .path-grid {
         grid-template-columns: 1fr;
       }
@@ -501,7 +472,6 @@
 
       <nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
         <a href="experience.html">Experience</a>
@@ -531,7 +501,6 @@
 
             <div class="hero-actions">
               <a href="projects.html" class="btn-primary">View My Projects</a>
-              <a href="#about" class="btn-secondary">About Me</a>
             </div>
           </div>
 
@@ -567,36 +536,6 @@
               <div class="tag">HTML</div>
               <div class="tag">CSS</div>
               <div class="tag">Learning React</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">About me</div>
-          <h2 class="section-title">A little more about who I am</h2>
-          <p class="section-copy">
-            I’m someone who enjoys learning, creating, and improving through practice. I like turning ideas into simple, useful digital experiences and growing my skills step by step through real projects.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <p class="section-copy">
-            I’m especially interested in web development because it combines creativity, logic, and problem-solving. I like building projects that not only work well, but also feel clean and easy to use. Right now, I’m focused on strengthening my foundations, learning more advanced tools, and becoming a developer who can make a meaningful contribution to a team.
-          </p>
-
-          <div class="about-grid">
-            <div class="about-box">
-              <h3>How I work</h3>
-              <p>I like to keep things clear, organised, and thoughtful. I enjoy learning by building and improving as I go.</p>
-            </div>
-
-            <div class="about-box">
-              <h3>What I’m aiming for</h3>
-              <p>I’m working towards junior, internship, and early-career opportunities where I can learn, contribute, and keep growing.</p>
             </div>
           </div>
         </div>
@@ -678,7 +617,7 @@
   <footer>
     <div class="container">
       <div class="footer-row">
-        <p>© 2025 Varisha Mohsin. Designed and developed with care.</p>
+        <p>© 2025 Varisha Mohsin.</p>
         <div class="footer-links">
           <a
             class="social-link"
